@@ -1014,7 +1014,7 @@ static u8 SaveFileExistsCallback(void)
     }
     else
     {
-        ShowSaveMessage(gText_AlreadySavedFile, SaveConfirmOverwriteCallback);
+        sSaveDialogCallback = SaveSavingMessageCallback;    // Remove extra confirmation prompt when saving
     }
 
     return SAVE_IN_PROGRESS;
