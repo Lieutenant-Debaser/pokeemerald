@@ -57,6 +57,9 @@ static bool8 IsAbilityAllowingEncounter(u8 level);
 
 EWRAM_DATA static u8 sWildEncountersDisabled = 0;
 EWRAM_DATA static u32 sFeebasRngValue = 0;
+EWRAM_DATA u8 gChainFishingStreak = 0;
+EWRAM_DATA static u16 sLastFishingSpecies = 0;
+EWRAM_DATA bool8 gIsFishingEncounter = FALSE;
 
 #include "data/wild_encounters.h"
 
@@ -769,6 +772,7 @@ void FishingWildEncounter(u8 rod)
 {
     u16 species;
 
+    gIsFishingEncounter = TRUE;
     if (CheckFeebas() == TRUE)
     {
         u8 level = ChooseWildMonLevel(&sWildFeebas);
@@ -780,6 +784,20 @@ void FishingWildEncounter(u8 rod)
     {
         species = GenerateFishingWildMon(gWildMonHeaders[GetCurrentMapWildMonHeaderId()].fishingMonsInfo, rod);
     }
+
+    if (species == sLastFishingSpecies)
+    {
+        // Increment chance of shiny fish on consecutive fish species
+        if (gChainFishingStreak < 20)
+            gChainFishingStreak++;
+    }
+    else
+    {
+        // Reset counter if a break in the series occurs
+        gChainFishingStreak = 0;
+    }
+
+    sLastFishingSpecies = species;
     IncrementGameStat(GAME_STAT_FISHING_CAPTURES);
     SetPokemonAnglerSpecies(species);
     BattleSetup_StartWildBattle();
