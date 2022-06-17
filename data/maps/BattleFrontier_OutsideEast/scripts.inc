@@ -40,6 +40,10 @@ BattleFrontier_OutsideEast_EventScript_BattleArenaSign::
 BattleFrontier_OutsideEast_EventScript_BattlePyramidSign::
 	msgbox BattleFrontier_OutsideEast_Text_BattlePyramidSign, MSGBOX_SIGN
 	end
+	
+BattleFrontier_OutsideEast_EventScript_GemShopSign::
+	msgbox BattleFrontier_OutsideEast_Text_GemShopSign, MSGBOX_SIGN
+	end
 
 BattleFrontier_OutsideEast_EventScript_NinjaBoy::
 	msgbox BattleFrontier_OutsideEast_Text_BattleTowerFeelsSpecial, MSGBOX_NPC
@@ -257,6 +261,10 @@ BattleFrontier_OutsideEast_Text_RankingHallSign:
 BattleFrontier_OutsideEast_Text_ExchangeCornerSign:
 	.string "BATTLE POINT EXCHANGE SERVICE CORNER\n"
 	.string "Exchange your Battle Points!$"
+	
+BattleFrontier_OutsideEast_Text_GemShopSign:
+    .string "Welcome to the GEM SHOP!\n"
+    .string "Evolution stones sold here!$"
 
 BattleFrontier_OutsideEast_Text_BattleTowerFeelsSpecial:
 	.string "Wow!\n"
