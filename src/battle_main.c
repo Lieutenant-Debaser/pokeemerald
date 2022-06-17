@@ -4611,7 +4611,7 @@ u8 GetWhoStrikesFirst(u8 battler1, u8 battler2, bool8 ignoreChosenMoves)
         && FlagGet(FLAG_BADGE03_GET)
         && GetBattlerSide(battler1) == B_SIDE_PLAYER)
     {
-        speedBattler1 = (speedBattler1 * 110) / 100;
+        speedBattler1 = (speedBattler1 * 103) / 100;
     }
 
     if (holdEffect == HOLD_EFFECT_MACHO_BRACE)
@@ -4645,7 +4645,7 @@ u8 GetWhoStrikesFirst(u8 battler1, u8 battler2, bool8 ignoreChosenMoves)
         && FlagGet(FLAG_BADGE03_GET)
         && GetBattlerSide(battler2) == B_SIDE_PLAYER)
     {
-        speedBattler2 = (speedBattler2 * 110) / 100;
+        speedBattler2 = (speedBattler2 * 103) / 100;
     }
 
     if (holdEffect == HOLD_EFFECT_MACHO_BRACE)
