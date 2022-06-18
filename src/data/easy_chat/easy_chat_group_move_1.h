@@ -96,6 +96,7 @@ const u16 gEasyChatGroup_Move1[] = {
     MOVE_RECOVER,
     MOVE_RETURN,
     MOVE_REVERSAL,
+    MOVE_ROCK_CLIMB,
     MOVE_ROCK_SLIDE,
     MOVE_ROCK_SMASH,
     MOVE_ROCK_THROW,
