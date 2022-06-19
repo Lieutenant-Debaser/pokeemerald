@@ -270,6 +270,8 @@ static void Task_PrintSkillsPage(u8);
 static void PrintHeldItemName(void);
 static void PrintSkillsPageText(void);
 static void PrintRibbonCount(void);
+static void BufferLeftColumnEV(void);
+static void BufferRightColumnEV(void);
 static void BufferLeftColumnStats(void);
 static void PrintLeftColumnStats(void);
 static void BufferRightColumnStats(void);
@@ -310,6 +312,7 @@ static void DestroyMoveSelectorSprites(u8);
 static void SetMainMoveSelectorColor(u8);
 static void KeepMoveSelectorVisible(u8);
 static void BufferStat(u8 *dst, s8 natureMod, u32 stat, u32 strId, u32 n);
+static void BufferEVStat(u8 mode);
 static void SummaryScreen_DestroyAnimDelayTask(void);
 
 // const rom data
@@ -724,6 +727,7 @@ static void (*const sTextPrinterTasks[])(u8 taskId) =
 static const u8 sMemoNatureTextColor[] = _("{COLOR LIGHT_RED}{SHADOW GREEN}");
 static const u8 sMemoMiscTextColor[] = _("{COLOR WHITE}{SHADOW DARK_GRAY}"); // This is also affected by palettes, apparently
 static const u8 sStatsLeftColumnLayout[] = _("{DYNAMIC 0}/{DYNAMIC 1}\n{DYNAMIC 2}\n{DYNAMIC 3}");
+static const u8 sStatsLeftColumnLayoutNoSlash[] = _("{DYNAMIC 0}\n{DYNAMIC 1}\n{DYNAMIC 2}"); // Removes the forward slash from the HP's cell in the stat summary screen
 static const u8 sStatsRightColumnLayout[] = _("{DYNAMIC 0}\n{DYNAMIC 1}\n{DYNAMIC 2}");
 static const u8 sMovesPPLayout[] = _("{PP}{DYNAMIC 0}/{DYNAMIC 1}");
 
@@ -1549,6 +1553,22 @@ static void Task_HandleInput(u8 taskId)
             StopPokemonAnimations();
             PlaySE(SE_SELECT);
             BeginCloseSummaryScreen(taskId);
+        }
+        // Pressing the SELECT button on the stats page will display total EVs earned
+        else if (gMain.newKeys & SELECT_BUTTON)
+        {
+            if (sMonSummaryScreen->currPageIndex == PSS_PAGE_SKILLS)
+            {
+                BufferEVStat(1);
+            }
+        }
+        // Pressing the START button on the stats page will display current stat values
+        else if (gMain.newKeys & START_BUTTON)
+        {
+            if (sMonSummaryScreen->currPageIndex == PSS_PAGE_SKILLS)
+            {
+                BufferEVStat(0);
+            }
         }
     }
 }
@@ -3345,6 +3365,78 @@ static void PrintRibbonCount(void)
 
     x = GetStringCenterAlignXOffset(FONT_NORMAL, text, 70) + 6;
     PrintTextOnWindow(AddWindowFromTemplateList(sPageSkillsTemplate, PSS_DATA_WINDOW_SKILLS_RIBBON_COUNT), text, x, 1, 0, 0);
+}
+
+static void BufferEVStat(u8 mode)
+{
+    // Reset window buffer before printing values out to summary screen
+    FillWindowPixelBuffer(sMonSummaryScreen->windowIds[PSS_DATA_WINDOW_SKILLS_STATS_LEFT], 0);
+    FillWindowPixelBuffer(sMonSummaryScreen->windowIds[PSS_DATA_WINDOW_SKILLS_STATS_RIGHT], 0);
+
+    switch (mode)
+    {
+        // Only print EVs if mode 1 was specified
+        case 1:
+            BufferLeftColumnEV();
+            PrintLeftColumnStats();
+            BufferRightColumnEV();
+            PrintRightColumnStats();
+            break;
+        // Do default behavior of displaying current stat values if unhandled mode is passed in
+        default:
+            BufferLeftColumnStats();
+            PrintLeftColumnStats();
+            BufferRightColumnStats();
+            PrintRightColumnStats();
+    }
+}
+
+static void BufferLeftColumnEV(void)
+{
+    // Allocate memory for EVs
+    u16 *HpEV  = Alloc(2);
+    u16 *AtkEV = Alloc(2);
+    u16 *DefEV = Alloc(2);
+
+    // Obtain values of EVs for current Pokemon
+    *HpEV  = GetMonData (&sMonSummaryScreen->currentMon, MON_DATA_HP_EV);
+    *AtkEV = GetMonData (&sMonSummaryScreen->currentMon, MON_DATA_ATK_EV);
+    *DefEV = GetMonData (&sMonSummaryScreen->currentMon, MON_DATA_DEF_EV);
+
+    // Buffer EV values to summary screen
+    BufferStat(gStringVar1, 0, *HpEV, 0, 7);
+    BufferStat(gStringVar2, 0, *AtkEV, 1, 7);
+    BufferStat(gStringVar3, 0, *DefEV, 2, 7);
+    DynamicPlaceholderTextUtil_ExpandPlaceholders(gStringVar4, sStatsLeftColumnLayoutNoSlash);
+
+    // Deallocate memory used for EVs
+    Free(HpEV);
+    Free(AtkEV);
+    Free(DefEV);
+}
+
+static void BufferRightColumnEV(void)
+{
+    // Allocate memory for EVs
+    u16 *SpAtkEV = Alloc(2);
+    u16 *SpDefEV = Alloc(2);
+    u16 *SpeedEV = Alloc(2);
+
+    // Obtain value of EVs for current Pokemon
+    *SpAtkEV = GetMonData (&sMonSummaryScreen->currentMon, MON_DATA_SPATK_EV);
+    *SpDefEV = GetMonData (&sMonSummaryScreen->currentMon, MON_DATA_SPDEF_EV);
+    *SpeedEV = GetMonData (&sMonSummaryScreen->currentMon, MON_DATA_SPEED_EV);
+
+    // Buffer EV values to summary screen
+    BufferStat(gStringVar1, 0, *SpAtkEV, 0, 3);
+    BufferStat(gStringVar2, 0, *SpDefEV, 1, 3);
+    BufferStat(gStringVar3, 0, *SpeedEV, 2, 3);
+    DynamicPlaceholderTextUtil_ExpandPlaceholders(gStringVar4, sStatsRightColumnLayout);
+
+    // Deallocate memory used for EVs
+    Free(SpAtkEV);
+    Free(SpDefEV);
+    Free(SpeedEV);
 }
 
 static void BufferLeftColumnStats(void)
