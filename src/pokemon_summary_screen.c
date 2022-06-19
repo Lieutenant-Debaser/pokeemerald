@@ -184,7 +184,8 @@ static EWRAM_DATA struct PokemonSummaryScreenData
     u8 spriteIds[SPRITE_ARR_ID_COUNT];
     bool8 unk40EF;
     s16 switchCounter; // Used for various switch statement cases that decompress/load graphics or pokemon data
-    u8 unk_filler4[6];
+    bool8 showEVs; // Used to toggle between stats and EVs on the summary screen
+    u8 unk_filler4[5];
 } *sMonSummaryScreen = NULL;
 EWRAM_DATA u8 gLastViewedMonIndex = 0;
 static EWRAM_DATA u8 sMoveSlotToReplace = 0;
@@ -1554,22 +1555,27 @@ static void Task_HandleInput(u8 taskId)
             PlaySE(SE_SELECT);
             BeginCloseSummaryScreen(taskId);
         }
-        // Pressing the SELECT button on the stats page will display total EVs earned
+        // Pressing the SELECT button on the stats page will toggle between displaying stats and EVs
         else if (gMain.newKeys & SELECT_BUTTON)
         {
             if (sMonSummaryScreen->currPageIndex == PSS_PAGE_SKILLS)
             {
-                BufferEVStat(1);
+                sMonSummaryScreen->showEVs = !(sMonSummaryScreen->showEVs);
+                PlaySE(SE_SELECT);
+                if (sMonSummaryScreen->showEVs == FALSE)
+                {
+                    BufferEVStat(0);
+                }
+                else
+                {
+                    BufferEVStat(1);
+                }
             }
         }
-        // Pressing the START button on the stats page will display current stat values
-        else if (gMain.newKeys & START_BUTTON)
-        {
-            if (sMonSummaryScreen->currPageIndex == PSS_PAGE_SKILLS)
-            {
-                BufferEVStat(0);
-            }
-        }
+
+        // Reset showEV flag if the menu has been changed to another screen or Pokemon
+        if (JOY_NEW(DPAD_ANY))
+            sMonSummaryScreen->showEVs = FALSE;
     }
 }
 
@@ -2180,7 +2186,6 @@ static void Task_SetHandleReplaceMoveInput(u8 taskId)
     CreateMoveSelectorSprites(SPRITE_ARR_ID_MOVE_SELECTOR1);
     gTasks[taskId].func = Task_HandleReplaceMoveInput;
 }
-
 static void Task_HandleReplaceMoveInput(u8 taskId)
 {
     s16* data = gTasks[taskId].data;
