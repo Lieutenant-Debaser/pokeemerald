@@ -9,6 +9,7 @@ Route114_LanettesHouse_OnTransition:
 Route114_LanettesHouse_EventScript_Lanette::
 	lock
 	faceplayer
+	goto_if_set FLAG_IS_CHAMPION, Route114_LanettesHouse_EventScript_TryGiveHM09
 	goto_if_set FLAG_RECEIVED_DOLL_LANETTE, Route114_LanettesHouse_EventScript_OfferAdvice
 	setflag FLAG_SYS_PC_LANETTE
 	msgbox Route114_LanettesHouse_Text_EverythingClutteredKeepThis, MSGBOX_DEFAULT
@@ -44,6 +45,22 @@ Route114_LanettesHouse_EventScript_NotebookPage3::
 Route114_LanettesHouse_EventScript_PC::
 	msgbox Route114_LanettesHouse_Text_EmailFromBill, MSGBOX_SIGN
 	end
+	
+Route114_LanettesHouse_EventScript_TryGiveHM09::
+    goto_if_set FLAG_RECEIVED_HM09_FROM_LANETTE,Route114_LanettesHouse_EventScript_OfferAdvice
+    waitse
+    playse SE_PIN
+    applymovement 1, Common_Movement_ExclamationMark
+    waitmovement 0
+    applymovement 1, Common_Movement_Delay48
+    waitmovement 0
+    msgbox Route114_LanettesHouse_Text_OhIHeardAbout, MSGBOX_DEFAULT
+    setflag FLAG_RECEIVED_HM09_FROM_LANETTE
+    giveitem ITEM_HM09
+    msgbox Route114_LanettesHouse_Text_ExplainHM09, MSGBOX_DEFAULT
+    release
+    end
+    
 
 Route114_LanettesHouse_Text_EverythingClutteredKeepThis:
 	.string "LANETTE: Oh! {PLAYER}{KUN}!\p"
@@ -101,4 +118,19 @@ Route114_LanettesHouse_Text_EmailFromBill:
 	.string "research in Storage Systems.\p"
 	.string "“From BILL\n"
 	.string "… … … … … … … …”$"
+	
+Route114_LanettesHouse_Text_OhIHeardAbout:
+    .string "Oh! {PLAYER}{KUN}! I heard about you becoming\n"
+    .string "the new champion.\p"
+    .string "I think you're just the person I should\n"
+    .string "be giving this to.$"
+    
+Route114_LanettesHouse_Text_ExplainHM09:
+    .string "That HM contains a special move I've\n"
+    .string "been working on called ROCK CLIMB.\p"
+    .string "The mountains around here are rocky and\n"
+    .string "steep, but that's nothing a powerful\l"
+    .string "POKéMON can't handle!\p"
+    .string "Try and use it whenever you come across\n"
+    .string "a rocky path in the side of a hill.$"
 
