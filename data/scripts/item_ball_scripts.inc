@@ -657,3 +657,16 @@ MagmaHideout_4F_EventScript_ItemMaxRevive::
 MagmaHideout_3F_3R_EventScript_ItemEscapeRope::
 	finditem ITEM_ESCAPE_ROPE
 	end
+	
+Route111_AnnexCave_EventScript_ItemNugget::
+    finditem ITEM_NUGGET
+    end
+    
+Route111_AnnexCave_EventScript_ItemOldSeaMap::
+    msgbox Route111_AnnexCave_Text_TheresSomethingTucked, MSGBOX_DEFAULT
+    finditem ITEM_OLD_SEA_MAP
+    end
+    
+Route111_AnnexCave_Text_TheresSomethingTucked::
+    .string "There's something tucked behind the\n"
+    .string "rock...$"

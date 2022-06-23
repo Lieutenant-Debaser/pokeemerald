@@ -350,6 +350,8 @@
 #define METATILE_Mauville_MirageTower_TileD   0x3DC
 #define METATILE_Mauville_MirageTower_TileE   0x3DD
 #define METATILE_Mauville_MirageTower_TileF   0x3E3
+#define METATILE_Mauville_RockClimb_RockBase  0x3FF
+#define METATILE_Mauville_RockClimb_SandBase  0x3FE
 
 // gTileset_MeteorFalls
 #define METATILE_MeteorFalls_CaveEntrance_Bottom  0x24E

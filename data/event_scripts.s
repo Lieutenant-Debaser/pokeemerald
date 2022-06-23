@@ -1057,3 +1057,7 @@ Common_EventScript_LegendaryFlewAway::
 	.include "data/text/birch_speech.inc"
 
 	.include "data/maps/BattleFrontier_GemShop/scripts.inc"
+
+	.include "data/maps/Annex1_Route111/scripts.inc"
+
+	.include "data/maps/Route111_/scripts.inc"

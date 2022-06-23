@@ -27,6 +27,11 @@
       "direction": "left",
       "offset": 20,
       "map": "MAP_ROUTE112"
+    },
+    {
+      "direction": "right",
+      "offset": 29,
+      "map": "MAP_ANNEX1_ROUTE111"
     }
   ],
   "object_events": [
@@ -972,6 +977,24 @@
       "var": "0",
       "var_value": "0",
       "script": "Route111_EventScript_SandstormTrigger"
+    },
+    {
+      "type": "trigger",
+      "x": 39,
+      "y": 42,
+      "elevation": 3,
+      "var": "VAR_TEMP_3",
+      "var_value": "0",
+      "script": "Route111_EventScript_ViciousSandstormTriggerRight"
+    },
+    {
+      "type": "trigger",
+      "x": 39,
+      "y": 43,
+      "elevation": 3,
+      "var": "VAR_TEMP_3",
+      "var_value": "0",
+      "script": "Route111_EventScript_ViciousSandstormTriggerRight"
     }
   ],
   "bg_events": [
