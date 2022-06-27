@@ -547,7 +547,7 @@ void BattleSetup_StartLegendaryBattle(void)
         SetMonMoveSlot(&gEnemyParty[0], MOVE_SHADOW_BALL, 3);
         break;
     case SPECIES_MEWTWO:
-        CreateBattleStartTask(B_TRANSITION_BLACKHOLE, MUS_VS_MEW);
+        CreateBattleStartTask(B_TRANSITION_BLACKHOLE, MUS_RG_VS_MEWTWO);
         break;
     }
 
