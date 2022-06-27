@@ -39,5 +39,6 @@ porymap.project.cfg
 *.sym
 *.js
 
+porymap.sh
 sync.sh
 *.cheats

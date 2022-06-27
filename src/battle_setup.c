@@ -534,11 +534,20 @@ void BattleSetup_StartLegendaryBattle(void)
         CreateBattleStartTask(B_TRANSITION_BLUR, MUS_RG_VS_DEOXYS);
         break;
     case SPECIES_LUGIA:
+        CreateBattleStartTask(B_TRANSITION_RIPPLE, MUS_RG_VS_LEGEND);
+        break;
     case SPECIES_HO_OH:
         CreateBattleStartTask(B_TRANSITION_BLUR, MUS_RG_VS_LEGEND);
         break;
     case SPECIES_MEW:
         CreateBattleStartTask(B_TRANSITION_GRID_SQUARES, MUS_VS_MEW);
+        SetMonMoveSlot(&gEnemyParty[0], MOVE_PSYCHIC, 0);
+        SetMonMoveSlot(&gEnemyParty[0], MOVE_CALM_MIND, 1);
+        SetMonMoveSlot(&gEnemyParty[0], MOVE_ANCIENT_POWER, 2);
+        SetMonMoveSlot(&gEnemyParty[0], MOVE_SHADOW_BALL, 3);
+        break;
+    case SPECIES_MEWTWO:
+        CreateBattleStartTask(B_TRANSITION_BLACKHOLE, MUS_VS_MEW);
         break;
     }
 

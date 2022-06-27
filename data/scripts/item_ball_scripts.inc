@@ -663,6 +663,8 @@ Route111_AnnexCave_EventScript_ItemNugget::
     end
     
 Route111_AnnexCave_EventScript_ItemOldSeaMap::
+	setflag FLAG_ENABLE_SHIP_FARAWAY_ISLAND
+	setflag FLAG_RECEIVED_OLD_SEA_MAP
     msgbox Route111_AnnexCave_Text_TheresSomethingTucked, MSGBOX_DEFAULT
     finditem ITEM_OLD_SEA_MAP
     end

@@ -129,8 +129,11 @@ LilycoveCity_Harbor_EventScript_GetOldSeaMapState::
 	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_NopReturn
 	setvar VAR_TEMP_C, 1
 	goto_if_set FLAG_SHOWN_OLD_SEA_MAP, Common_EventScript_NopReturn
+	goto_if_unset FLAG_SHOWN_OLD_SEA_MAP, LilycoveCity_Harbor_EventScript_OldSeaMapFirstTime
 	setvar VAR_TEMP_C, 2
 	return
+
+	
 
 LilycoveCity_Harbor_EventScript_GetMysticTicketState::
 	setvar VAR_TEMP_9, 0

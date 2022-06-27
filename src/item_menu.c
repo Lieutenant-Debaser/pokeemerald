@@ -2596,3 +2596,13 @@ static void PrintTMHMMoveData(u16 itemId)
         CopyWindowToVram(WIN_TMHM_INFO, COPYWIN_GFX);
     }
 }
+
+void CB2_ChooseKeyItem(void)
+{
+    GoToBagMenu(ITEMMENULOCATION_FIELD, KEYITEMS_POCKET, CB2_ReturnToFieldContinueScript);
+}
+
+void Bag_ChooseKeyItem(void)
+{
+    SetMainCallback2(CB2_ChooseKeyItem);
+}

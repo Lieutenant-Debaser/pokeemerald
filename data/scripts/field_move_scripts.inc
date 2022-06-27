@@ -313,10 +313,10 @@ EventScript_EndRockClimb::
 	
 Text_WantToRockClimb:
     .string "The cliff is steep.\n"
-    .string "Would you like to use Rock Climb?$"
+    .string "Would you like to use ROCK CLIMB?$"
     
 Text_MonUsedRockClimb:
-    .string "{STR_VAR_1} used Rock Climb!$"
+    .string "{STR_VAR_1} used ROCK CLIMB!$"
     
 Text_CantRockClimb:
     .string "The cliff is steep.\n"

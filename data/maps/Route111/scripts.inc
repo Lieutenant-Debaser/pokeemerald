@@ -602,6 +602,18 @@ Route111_EventScript_TrainerHillSign::
 	msgbox Route111_Text_TrainerHillSign, MSGBOX_SIGN
 	end
 
+Route111_EventScript_DesertHiker::
+	msgbox Route111_Text_DesertHiker, MSGBOX_NPC
+	end
+
+Route111_Text_DesertHiker:
+	.string "They say the desert ahead is filled\n"
+	.string "with treasures. Disappearing towers,\l"
+	.string "reclusive POKéMON, and even a thief's\l"
+	.string "stash...\p"
+	.string "I just wish the sandstorm would calm\n"
+	.string "down so I could take a look around.$"
+
 Route111_Text_BattleOurFamily:
 	.string "Hello! I take it you're a traveler.\p"
 	.string "How's this? What do you say to taking\n"

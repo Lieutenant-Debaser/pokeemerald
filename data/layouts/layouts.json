@@ -2864,8 +2864,8 @@
     {
       "id": "LAYOUT_ROUTE104_PROTOTYPE",
       "name": "Route104_Prototype_Layout",
-      "width": 1,
-      "height": 1,
+      "width": 16,
+      "height": 16,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Rustboro",
       "border_filepath": "data/layouts/Route104_Prototype/border.bin",

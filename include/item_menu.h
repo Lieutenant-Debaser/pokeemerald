@@ -108,4 +108,7 @@ void DisplayItemMessage(u8 taskId, u8 fontId, const u8 *str, void ( *callback)(u
 void DisplayItemMessageOnField(u8 taskId, const u8 *src, TaskFunc callback);
 void CloseItemMessage(u8 taskId);
 
+void CB2_ChooseKeyItem(void);
+void Bag_ChooseKeyItem(void);
+
 #endif //GUARD_ITEM_MENU_H
