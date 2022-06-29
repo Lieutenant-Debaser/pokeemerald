@@ -541,13 +541,17 @@ void BattleSetup_StartLegendaryBattle(void)
         break;
     case SPECIES_MEW:
         CreateBattleStartTask(B_TRANSITION_GRID_SQUARES, MUS_VS_MEW);
-        SetMonMoveSlot(&gEnemyParty[0], MOVE_PSYCHIC, 0);
+        SetMonMoveSlot(&gEnemyParty[0], MOVE_EXTRASENSORY, 0);
         SetMonMoveSlot(&gEnemyParty[0], MOVE_CALM_MIND, 1);
-        SetMonMoveSlot(&gEnemyParty[0], MOVE_ANCIENT_POWER, 2);
-        SetMonMoveSlot(&gEnemyParty[0], MOVE_SHADOW_BALL, 3);
+        SetMonMoveSlot(&gEnemyParty[0], MOVE_FUTURE_SIGHT, 2);
+        SetMonMoveSlot(&gEnemyParty[0], MOVE_RECOVER, 3);
         break;
     case SPECIES_MEWTWO:
-        CreateBattleStartTask(B_TRANSITION_BLACKHOLE, MUS_RG_VS_MEWTWO);
+        CreateBattleStartTask(B_TRANSITION_BLACKHOLE_PULSATE, MUS_RG_VS_MEWTWO);
+        SetMonMoveSlot(&gEnemyParty[0], MOVE_PSYCHIC, 0);
+        SetMonMoveSlot(&gEnemyParty[0], MOVE_FUTURE_SIGHT, 1);
+        SetMonMoveSlot(&gEnemyParty[0], MOVE_SHADOW_BALL, 2);
+        SetMonMoveSlot(&gEnemyParty[0], MOVE_SAFEGUARD, 3);
         break;
     }
 
@@ -555,6 +559,24 @@ void BattleSetup_StartLegendaryBattle(void)
     IncrementGameStat(GAME_STAT_WILD_BATTLES);
     IncrementDailyWildBattles();
     TryUpdateGymLeaderRematchFromWild();
+}
+
+bool8 CheckMew(void)
+{
+    u8 i;
+
+    i = 0;
+
+    CalculatePlayerPartyCount();
+
+    do
+    {
+        if (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES2, 0) == SPECIES_MEW)
+            return TRUE;
+        i++;
+    } while (i < gPlayerPartyCount);
+    
+    return FALSE;
 }
 
 void StartGroudonKyogreBattle(void)

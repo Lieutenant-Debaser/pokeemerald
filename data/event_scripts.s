@@ -1061,3 +1061,5 @@ Common_EventScript_LegendaryFlewAway::
 	.include "data/maps/Annex1_Route111/scripts.inc"
 
 	.include "data/maps/Route111_/scripts.inc"
+
+	.include "data/maps/MewtwoLair/scripts.inc"

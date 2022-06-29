@@ -542,3 +542,4 @@ gSpecials::
 	def_special GetSpDefIV
 	def_special GetSpeedIV
 	def_special Bag_ChooseKeyItem
+	def_special CheckMew

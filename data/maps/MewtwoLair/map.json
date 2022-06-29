@@ -1,12 +1,12 @@
 {
-  "id": "MAP_ROUTE104_PROTOTYPE",
-  "name": "Route104_Prototype",
-  "layout": "LAYOUT_ROUTE104_PROTOTYPE",
-  "music": "MUS_LILYCOVE",
-  "region_map_section": "MAPSEC_ROUTE_104",
+  "id": "MAP_MEWTWO_LAIR",
+  "name": "MewtwoLair",
+  "layout": "LAYOUT_MEWTWO_LAIR",
+  "music": "MUS_RG_MT_MOON",
+  "region_map_section": "MAPSEC_CERULEAN_CAVE",
   "requires_flash": false,
-  "weather": "WEATHER_SUNNY",
-  "map_type": "MAP_TYPE_ROUTE",
+  "weather": "WEATHER_NONE",
+  "map_type": "MAP_TYPE_UNDERGROUND",
   "allow_cycling": true,
   "allow_escaping": true,
   "allow_running": true,
@@ -16,32 +16,39 @@
   "object_events": [
     {
       "graphics_id": "OBJ_EVENT_GFX_MEWTWO",
-      "x": 13,
-      "y": 3,
+      "x": 8,
+      "y": 6,
       "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "ProtoType_KeyItem_CallBackTest",
-      "flag": "0"
+      "script": "MewtwoLair_EventScript_Mewtwo",
+      "flag": "FLAG_HIDE_MEWTWO"
     }
   ],
   "warp_events": [
     {
-      "x": 0,
-      "y": 2,
-      "elevation": 0,
-      "dest_map": "MAP_ROUTE104_PROTOTYPE",
-      "dest_warp_id": 0
-    },
-    {
-      "x": 6,
-      "y": 4,
+      "x": 8,
+      "y": 22,
       "elevation": 0,
       "dest_map": "MAP_MEWTWO_LAIR",
       "dest_warp_id": 0
+    },
+    {
+      "x": 8,
+      "y": 18,
+      "elevation": 0,
+      "dest_map": "MAP_MEWTWO_LAIR",
+      "dest_warp_id": 2
+    },
+    {
+      "x": 8,
+      "y": 10,
+      "elevation": 0,
+      "dest_map": "MAP_MEWTWO_LAIR",
+      "dest_warp_id": 1
     }
   ],
   "coord_events": [
