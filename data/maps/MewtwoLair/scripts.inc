@@ -70,3 +70,10 @@ MewtwoLair_EventScript_RanFromMewtwo::
 	setvar VAR_0x8004, SPECIES_MEWTWO
 	goto Common_EventScript_LegendaryFlewAway
 	end
+
+@ Braille wall script
+MewtwoLair_EventScript_BrailleWall::
+	lockall
+	braillemsgbox MewtwoLair_Braille_BringTheFirst
+	releaseall
+	end

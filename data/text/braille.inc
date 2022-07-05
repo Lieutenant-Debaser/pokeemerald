@@ -115,3 +115,9 @@ AncientTomb_Braille_ShineInTheMiddle:
 	.braille "INHERIT OUR\n"
 	.braille "WILL, SHINE\n"
 	.braille "IN THE MIDDLE.$"
+
+MewtwoLair_Braille_BringTheFirst:
+	brailleformat 3, 0, 25, 19, 6, 3
+	.braille "BRING THEY\n"
+	.braille "WHICH CAME\n"
+	.braille "FIRST.$"

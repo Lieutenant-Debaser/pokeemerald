@@ -651,7 +651,11 @@
 #define FLAG_HIDDEN_ITEM_ROUTE_123_RARE_CANDY                (FLAG_HIDDEN_ITEMS_START + 0x6E)
 #define FLAG_HIDDEN_ITEM_ROUTE_105_BIG_PEARL                 (FLAG_HIDDEN_ITEMS_START + 0x6F)
 
-#define FLAG_UNUSED_0x264  0x264 // Unused Flag
+// Cerulean cave (Ominous Caverns)
+#define FLAG_HIDDEN_ITEM_OMINOUS_CAVERNS_B1_BRIGHT_POWDER    (FLAG_HIDDEN_ITEMS_START + 0x70)
+#define FLAG_HIDDEN_ITEM_OMINOUS_CAVERNS_B1_ESCAPE_ROPE      (FLAG_HIDDEN_ITEMS_START + 0x71)
+
+
 #define FLAG_UNUSED_0x265  0x265 // Unused Flag
 #define FLAG_UNUSED_0x266  0x266 // Unused Flag
 #define FLAG_UNUSED_0x267  0x267 // Unused Flag
@@ -868,7 +872,9 @@
 #define FLAG_HIDE_AQUA_HIDEOUT_1F_GRUNT_2_BLOCKING_ENTRANCE         0x336
 #define FLAG_HIDE_MOSSDEEP_CITY_TEAM_MAGMA                          0x337
 #define FLAG_HIDE_PETALBURG_GYM_WALLYS_DAD                          0x338
+
 #define FLAG_HIDE_LEGEND_MON_CAVE_OF_ORIGIN                         0x339 // Unused, leftover from R/S
+
 #define FLAG_HIDE_SOOTOPOLIS_CITY_ARCHIE                            0x33A
 #define FLAG_HIDE_SOOTOPOLIS_CITY_MAXIE                             0x33B
 #define FLAG_HIDE_SEAFLOOR_CAVERN_ROOM_9_ARCHIE                     0x33C
@@ -1217,12 +1223,15 @@
 #define FLAG_ITEM_SAFARI_ZONE_NORTH_EAST_NUGGET                     0x491
 #define FLAG_ITEM_SAFARI_ZONE_SOUTH_EAST_BIG_PEARL                  0x492
 
-#define FLAG_ITEM_ROUTE111_ANNEXCAVE_NUGGET                         0x493 // Nugget item
+// Route 111 Annex Side Area
+#define FLAG_ITEM_ROUTE111_ANNEXCAVE_NUGGET                         0x493 // Nugget
 #define FLAG_ITEM_ROUTE111_ANNEXCAVE_OLDSEAMAP                      0x494 // Old Sea Map hidden in rock tile
 
-#define FLAG_UNUSED_0x495                                           0x495 // Unused Flag
-#define FLAG_UNUSED_0x496                                           0x496 // Unused Flag
-#define FLAG_UNUSED_0x497                                           0x497 // Unused Flag
+// Cerulean Cave (Ominous Caverns)
+#define FLAG_ITEM_OMINOUS_CAVERNS_B1_FULL_RESTORE                   0x495 // Full restore
+#define FLAG_ITEM_OMINOUS_CAVERNS_B2_RARE_CANDY                     0x496 // Rare candy
+#define FLAG_ITEM_OMINOUS_CAVERNS_B2_PP_MAX                         0x497 // PP max
+
 #define FLAG_UNUSED_0x498                                           0x498 // Unused Flag
 #define FLAG_UNUSED_0x499                                           0x499 // Unused Flag
 #define FLAG_UNUSED_0x49A                                           0x49A // Unused Flag

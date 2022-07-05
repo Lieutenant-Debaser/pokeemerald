@@ -669,6 +669,18 @@ Route111_AnnexCave_EventScript_ItemOldSeaMap::
     finditem ITEM_OLD_SEA_MAP
     end
     
-Route111_AnnexCave_Text_TheresSomethingTucked::
+Route111_AnnexCave_Text_TheresSomethingTucked:
     .string "There's something tucked behind the\n"
     .string "rock...$"
+
+OminousCaverns_EventScript_ItemFullRestore::
+	finditem ITEM_FULL_RESTORE
+	end
+
+OminousCaverns_EventScript_ItemRareCandy::
+	finditem ITEM_RARE_CANDY
+	end
+
+OminousCaverns_EventScript_ItemPPMax::
+	finditem ITEM_PP_MAX
+	end

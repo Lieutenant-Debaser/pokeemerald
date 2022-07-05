@@ -1063,3 +1063,13 @@ Common_EventScript_LegendaryFlewAway::
 	.include "data/maps/Route111_/scripts.inc"
 
 	.include "data/maps/MewtwoLair/scripts.inc"
+
+	.include "data/maps/CeruleanCave_FloorG_Entrance/scripts.inc"
+
+	.include "data/maps/CeruleanCave_FloorB1/scripts.inc"
+
+	.include "data/maps/CeruleanCave_FloorB2/scripts.inc"
+
+	.include "data/maps/NewMap1/scripts.inc"
+
+	.include "data/maps/CeruleanCave_FloorB1_North/scripts.inc"

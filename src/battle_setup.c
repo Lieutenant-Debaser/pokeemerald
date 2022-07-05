@@ -511,6 +511,8 @@ void BattleSetup_StartLatiBattle(void)
 
 void BattleSetup_StartLegendaryBattle(void)
 {
+    u8 heldItem[2];
+
     ScriptContext2_Enable();
     gMain.savedCallback = CB2_EndScriptedWildBattle;
     gBattleTypeFlags = BATTLE_TYPE_LEGENDARY;
@@ -552,6 +554,9 @@ void BattleSetup_StartLegendaryBattle(void)
         SetMonMoveSlot(&gEnemyParty[0], MOVE_FUTURE_SIGHT, 1);
         SetMonMoveSlot(&gEnemyParty[0], MOVE_SHADOW_BALL, 2);
         SetMonMoveSlot(&gEnemyParty[0], MOVE_SAFEGUARD, 3);
+        heldItem[0] = ITEM_KINGS_ROCK;
+        heldItem[1] = ITEM_KINGS_ROCK >> 8;
+        SetMonData    (&gEnemyParty[0], MON_DATA_HELD_ITEM, heldItem);
         break;
     }
 
@@ -564,7 +569,6 @@ void BattleSetup_StartLegendaryBattle(void)
 bool8 CheckMew(void)
 {
     u8 i;
-
     i = 0;
 
     CalculatePlayerPartyCount();

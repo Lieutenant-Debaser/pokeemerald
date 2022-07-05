@@ -96,7 +96,11 @@
     "Underwater_Route125",
     "Annex1_Route111",
     "Route111_",
-    "MewtwoLair"
+    "MewtwoLair",
+    "CeruleanCave_FloorG_Entrance",
+    "CeruleanCave_FloorB1",
+    "NewMap1",
+    "CeruleanCave_FloorB1_North"
   ],
   "gMapGroup_IndoorLittleroot": [
     "LittlerootTown_BrendansHouse_1F",
@@ -433,7 +437,8 @@
     "TerraCave_Entrance",
     "TerraCave_End",
     "AlteringCave",
-    "MeteorFalls_StevensCave"
+    "MeteorFalls_StevensCave",
+    "CeruleanCave_FloorB2"
   ],
   "gMapGroup_IndoorDynamic": [
     "SecretBase_RedCave1",

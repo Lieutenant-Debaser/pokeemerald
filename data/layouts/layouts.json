@@ -4450,6 +4450,56 @@
       "secondary_tileset": "gTileset_NavelRock",
       "border_filepath": "data/layouts/MewtwoLair/border.bin",
       "blockdata_filepath": "data/layouts/MewtwoLair/map.bin"
+    },
+    {
+      "id": "LAYOUT_CERULEAN_CAVE_FLOOR_G_ENTRANCE",
+      "name": "CeruleanCave_FloorG_Entrance_Layout",
+      "width": 11,
+      "height": 11,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_NavelRock",
+      "border_filepath": "data/layouts/CeruleanCave_FloorG_Entrance/border.bin",
+      "blockdata_filepath": "data/layouts/CeruleanCave_FloorG_Entrance/map.bin"
+    },
+    {
+      "id": "LAYOUT_CERULEAN_CAVE_FLOOR_B1",
+      "name": "CeruleanCave_FloorB1_Layout",
+      "width": 48,
+      "height": 48,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_NavelRock",
+      "border_filepath": "data/layouts/CeruleanCave_FloorB1/border.bin",
+      "blockdata_filepath": "data/layouts/CeruleanCave_FloorB1/map.bin"
+    },
+    {
+      "id": "LAYOUT_CERULEAN_CAVE_FLOOR_B2",
+      "name": "CeruleanCave_FloorB2_Layout",
+      "width": 36,
+      "height": 24,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_NavelRock",
+      "border_filepath": "data/layouts/CeruleanCave_FloorB2/border.bin",
+      "blockdata_filepath": "data/layouts/CeruleanCave_FloorB2/map.bin"
+    },
+    {
+      "id": "LAYOUT_NEW_MAP1",
+      "name": "NewMap1_Layout",
+      "width": 48,
+      "height": 24,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_NavelRock",
+      "border_filepath": "data/layouts/NewMap1/border.bin",
+      "blockdata_filepath": "data/layouts/NewMap1/map.bin"
+    },
+    {
+      "id": "LAYOUT_CERULEAN_CAVE_FLOOR_B1_NORTH",
+      "name": "CeruleanCave_FloorB1_North_Layout",
+      "width": 40,
+      "height": 24,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_NavelRock",
+      "border_filepath": "data/layouts/CeruleanCave_FloorB1_North/border.bin",
+      "blockdata_filepath": "data/layouts/CeruleanCave_FloorB1_North/map.bin"
     }
   ]
 }
