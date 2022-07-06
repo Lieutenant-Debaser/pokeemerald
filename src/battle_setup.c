@@ -511,6 +511,7 @@ void BattleSetup_StartLatiBattle(void)
 
 void BattleSetup_StartLegendaryBattle(void)
 {
+    // Variable to allow for Pokemon to have special held items
     u8 heldItem[2];
 
     ScriptContext2_Enable();
@@ -548,12 +549,16 @@ void BattleSetup_StartLegendaryBattle(void)
         SetMonMoveSlot(&gEnemyParty[0], MOVE_FUTURE_SIGHT, 2);
         SetMonMoveSlot(&gEnemyParty[0], MOVE_RECOVER, 3);
         break;
+    // Setup special Mewtwo battle
     case SPECIES_MEWTWO:
+        // Specify special battle transition
         CreateBattleStartTask(B_TRANSITION_BLACKHOLE_PULSATE, MUS_RG_VS_MEWTWO);
+        // Give Mewtwo a unique moveset
         SetMonMoveSlot(&gEnemyParty[0], MOVE_PSYCHIC, 0);
         SetMonMoveSlot(&gEnemyParty[0], MOVE_FUTURE_SIGHT, 1);
         SetMonMoveSlot(&gEnemyParty[0], MOVE_SHADOW_BALL, 2);
         SetMonMoveSlot(&gEnemyParty[0], MOVE_SAFEGUARD, 3);
+        // Give Mewtwo King's Rock
         heldItem[0] = ITEM_KINGS_ROCK;
         heldItem[1] = ITEM_KINGS_ROCK >> 8;
         SetMonData    (&gEnemyParty[0], MON_DATA_HELD_ITEM, heldItem);

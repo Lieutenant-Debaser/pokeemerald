@@ -68,8 +68,7 @@
 #define MAP_MEWTWO_LAIR                    (59 | (0 << 8))
 #define MAP_CERULEAN_CAVE_FLOOR_G_ENTRANCE (60 | (0 << 8))
 #define MAP_CERULEAN_CAVE_FLOOR_B1         (61 | (0 << 8))
-#define MAP_NEW_MAP1                       (62 | (0 << 8))
-#define MAP_CERULEAN_CAVE_FLOOR_B1_NORTH   (63 | (0 << 8))
+#define MAP_CERULEAN_CAVE_FLOOR_B1_NORTH   (62 | (0 << 8))
 
 // gMapGroup_IndoorLittleroot
 #define MAP_LITTLEROOT_TOWN_BRENDANS_HOUSE_1F    (0 | (1 << 8))

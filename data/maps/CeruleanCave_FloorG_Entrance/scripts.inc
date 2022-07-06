@@ -6,7 +6,7 @@ CeruleanCave_FloorG_Entrance_EventScript_WelcomeSign::
 
 CeruleanCave_FloorG_Entrance_Text_WelcomeSign:
 	.string "DO NOT ENTER!\n"
-	.string "Unstable geography!$"
+	.string "Seismic activity ahead!$"
 
 CeruleanCave_FloorG_Entrance_EventScript_BrailleWall::
 	lockall

@@ -89,8 +89,8 @@
       "x": 27,
       "y": 14,
       "elevation": 0,
-      "dest_map": "MAP_CERULEAN_CAVE_FLOOR_B1",
-      "dest_warp_id": 0
+      "dest_map": "MAP_CERULEAN_CAVE_FLOOR_G_ENTRANCE",
+      "dest_warp_id": 2
     }
   ],
   "coord_events": [

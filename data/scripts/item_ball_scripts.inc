@@ -684,3 +684,7 @@ OminousCaverns_EventScript_ItemRareCandy::
 OminousCaverns_EventScript_ItemPPMax::
 	finditem ITEM_PP_MAX
 	end
+
+OminousCaverns_EventScript_ItemMaxElixir::
+	finditem ITEM_MAX_ELIXIR
+	end

@@ -1231,8 +1231,8 @@
 #define FLAG_ITEM_OMINOUS_CAVERNS_B1_FULL_RESTORE                   0x495 // Full restore
 #define FLAG_ITEM_OMINOUS_CAVERNS_B2_RARE_CANDY                     0x496 // Rare candy
 #define FLAG_ITEM_OMINOUS_CAVERNS_B2_PP_MAX                         0x497 // PP max
+#define FLAG_ITEM_OMINOUS_CAVERNS_B1_NORTH_MAXELIXIR                0x498 // Max elixir
 
-#define FLAG_UNUSED_0x498                                           0x498 // Unused Flag
 #define FLAG_UNUSED_0x499                                           0x499 // Unused Flag
 #define FLAG_UNUSED_0x49A                                           0x49A // Unused Flag
 #define FLAG_UNUSED_0x49B                                           0x49B // Unused Flag
