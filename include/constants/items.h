@@ -443,8 +443,8 @@
 
 #define ITEM_HM09_ROCK_CLIMB ITEM_HM09
 
-// Unknown
-#define ITEM_15C 348
+// Shiny charm
+#define ITEM_SHINY_CHARM    348
 
 // FireRed/LeafGreen
 #define ITEM_OAKS_PARCEL 349

@@ -19,3 +19,7 @@ ProtoType_KeyItem_CancelPicking::
 
 ProtoType_Text_NeverMind:
 	.string "Oop! Never mind then...$"
+
+ProtoType_EventScript_GiveShinyCharm::
+	giveitem ITEM_SHINY_CHARM
+	end

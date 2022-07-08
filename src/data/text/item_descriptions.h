@@ -1413,6 +1413,11 @@ static const u8 sHM09Desc[] = _(
     "with mountain-\n"
     "scaling power.");
 
+static const u8 sShinyCharmDesc[] = _(
+    "An mystic charm\n"
+    "that attracts\n"
+    "unusual POKéMON.");
+
 // FireRed/LeafGreen key items
 static const u8 sOaksParcelDesc[] = _(
     "A parcel for PROF.\n"
