@@ -322,7 +322,7 @@ PlayersHouse_1F_EventScript_DontPushYourselfTooHard::
 	end
 
 PlayersHouse_1F_EventScript_TryRegisterMom::
-	goto_if_set FLAG_ENABLE_MOM_MATCH_CALL, PlayersHouse_1F_EventScript_CheckGiveAmuletCoin
+	goto_if_set FLAG_ENABLE_MOM_MATCH_CALL, PlayersHouse_1F_EventScript_TryGiveItems
 	msgbox PlayersHouse_1F_Text_IsThatAPokenav, MSGBOX_DEFAULT
 	closemessage
 	delay 30
@@ -335,12 +335,35 @@ PlayersHouse_1F_EventScript_TryRegisterMom::
 	release
 	end
 
-PlayersHouse_1F_EventScript_CheckGiveAmuletCoin::
-	goto_if_set FLAG_BADGE05_GET, PlayersHouse_1F_EventScript_TryGiveAmuletCoin
+PlayersHouse_1F_EventScript_TryGiveItems::
+	goto_if_unset FLAG_RECEIVED_AMULET_COIN, PlayersHouse_1F_EventScript_TryGiveAmuletCoin
+	goto_if_unset FLAG_RECEIVED_SHINY_CHARM, PlayersHouse_1F_EventScript_TryGiveShinyCharm
 	goto PlayersHouse_1F_EventScript_MomHealsParty
 
+PlayersHouse_1F_EventScript_TryGiveShinyCharm::
+	specialvar VAR_RESULT, HasAllMons
+	goto_if_eq VAR_RESULT, FALSE, PlayersHouse_1F_EventScript_MomHealsParty
+	msgbox PlayersHouse_1F_Text_CompletedPokedex, MSGBOX_DEFAULT
+	giveitem ITEM_SHINY_CHARM
+	setflag FLAG_RECEIVED_SHINY_CHARM
+	msgbox PlayersHouse_1F_Text_MoreToDo, MSGBOX_DEFAULT
+	release
+	end
+
+PlayersHouse_1F_Text_CompletedPokedex:
+	.string "Oh! {PLAYER}{KUN}! I can't believe this...\n"
+	.string "Is that a completed POKéDEX?\p"
+	.string "Well... I've been trying to find a good\n"
+	.string "time to give you this, and I think now\l"
+	.string "is perfect!$"
+
+PlayersHouse_1F_Text_MoreToDo:
+	.string "Your POKéDEX may be complete, but\n"
+	.string "there is still more to explore!\p"
+	.string "Your journey is never really over,\n"
+	.string "honey. Get out there and go!$"
+
 PlayersHouse_1F_EventScript_TryGiveAmuletCoin::
-	goto_if_set FLAG_RECEIVED_AMULET_COIN, PlayersHouse_1F_EventScript_MomHealsParty
 	msgbox PlayersHouse_1F_Text_GotDadsBadgeHeresSomethingFromMom, MSGBOX_DEFAULT
 	giveitem ITEM_AMULET_COIN
 	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
