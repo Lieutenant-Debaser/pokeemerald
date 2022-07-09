@@ -7282,6 +7282,8 @@ const struct Trainer gTrainers[] = {
     [TRAINER_BRENDAN_ROUTE_103_MUDKIP] =
     {
         .partyFlags = 0,
+        .hasCustomTransition = TRUE,
+        .transition = B_TRANSITION_MUGSHOT,
         .trainerClass = TRAINER_CLASS_RIVAL,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
         .trainerPic = TRAINER_PIC_BRENDAN,
@@ -7324,6 +7326,8 @@ const struct Trainer gTrainers[] = {
     [TRAINER_BRENDAN_ROUTE_103_TREECKO] =
     {
         .partyFlags = 0,
+        .hasCustomTransition = TRUE,
+        .transition = B_TRANSITION_MUGSHOT,
         .trainerClass = TRAINER_CLASS_RIVAL,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
         .trainerPic = TRAINER_PIC_BRENDAN,
@@ -7366,6 +7370,8 @@ const struct Trainer gTrainers[] = {
     [TRAINER_BRENDAN_ROUTE_103_TORCHIC] =
     {
         .partyFlags = 0,
+        .hasCustomTransition = TRUE,
+        .transition = B_TRANSITION_MUGSHOT,
         .trainerClass = TRAINER_CLASS_RIVAL,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_MALE,
         .trainerPic = TRAINER_PIC_BRENDAN,
