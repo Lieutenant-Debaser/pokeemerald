@@ -11,7 +11,19 @@
 #define MUGSHOT_MAY         6
 #define MUGSHOT_BRENDAN     7
 
-#define LAST_MUGSHOT        MUGSHOT_BRENDAN
+#define MUGSHOT_ROXANNE     8
+#define MUGSHOT_BRAWLY      9
+#define MUGSHOT_WATTSON     10
+#define MUGSHOT_FLANNERY    11
+#define MUGSHOT_NORMAN      12
+#define MUGSHOT_WINONA      13
+#define MUGSHOT_TATELIZA    14
+#define MUGSHOT_JUAN        15
+
+#define MUGSHOT_WALLY       16
+#define MUGSHOT_STEVEN      17
+
+#define LAST_MUGSHOT        MUGSHOT_STEVEN
 #define MUGSHOTS_COUNT      (LAST_MUGSHOT + 1)
 
 #endif //GUARD_CONSTANTS_BATTLE_TRANSITION_H

@@ -238,6 +238,7 @@ LilycoveCity_EventScript_Rival::
 	end
 
 LilycoveCity_EventScript_May::
+	setvar VAR_MUGSHOT_ID, MUGSHOT_MAY
 	playbgm MUS_ENCOUNTER_MAY, TRUE
 	call_if_set FLAG_DECLINED_RIVAL_BATTLE_LILYCOVE, LilycoveCity_EventScript_MayAskToBattleAgain
 	call_if_unset FLAG_DECLINED_RIVAL_BATTLE_LILYCOVE, LilycoveCity_EventScript_MayAskToBattle
@@ -266,6 +267,7 @@ LilycoveCity_EventScript_DeclineMayBattle::
 	end
 
 LilycoveCity_EventScript_Brendan::
+	setvar VAR_MUGSHOT_ID, MUGSHOT_BRENDAN
 	playbgm MUS_ENCOUNTER_BRENDAN, TRUE
 	call_if_set FLAG_DECLINED_RIVAL_BATTLE_LILYCOVE, LilycoveCity_EventScript_BrendanAskToBattleAgain
 	call_if_unset FLAG_DECLINED_RIVAL_BATTLE_LILYCOVE, LilycoveCity_EventScript_BrendanAskToBattle

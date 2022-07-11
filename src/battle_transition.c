@@ -554,17 +554,37 @@ static const u8 sMugshotsTrainerPicIDsTable[MUGSHOTS_COUNT] =
     [MUGSHOT_CHAMPION] = TRAINER_PIC_CHAMPION_WALLACE,
     [MUGSHOT_MAY]      = TRAINER_PIC_MAY,
     [MUGSHOT_BRENDAN]  = TRAINER_PIC_BRENDAN,
+    [MUGSHOT_ROXANNE]  = TRAINER_PIC_LEADER_ROXANNE,
+    [MUGSHOT_BRAWLY]   = TRAINER_PIC_LEADER_BRAWLY,
+    [MUGSHOT_WATTSON]  = TRAINER_PIC_LEADER_WATTSON,
+    [MUGSHOT_FLANNERY] = TRAINER_PIC_LEADER_FLANNERY,
+    [MUGSHOT_NORMAN]   = TRAINER_PIC_LEADER_NORMAN,
+    [MUGSHOT_WINONA]   = TRAINER_PIC_LEADER_WINONA,
+    [MUGSHOT_TATELIZA] = TRAINER_PIC_LEADER_TATE_AND_LIZA,
+    [MUGSHOT_JUAN]     = TRAINER_PIC_LEADER_JUAN,
+    [MUGSHOT_WALLY]    = TRAINER_PIC_WALLY,
+    [MUGSHOT_STEVEN]   = TRAINER_PIC_STEVEN,
 };
 static const s16 sMugshotsOpponentRotationScales[MUGSHOTS_COUNT][2] =
 {
-    [MUGSHOT_NONE]   =   {0x200, 0x200},
-    [MUGSHOT_SIDNEY] =   {0x200, 0x200},
-    [MUGSHOT_PHOEBE] =   {0x200, 0x200},
-    [MUGSHOT_GLACIA] =   {0x1B0, 0x1B0},
-    [MUGSHOT_DRAKE] =    {0x1A0, 0x1A0},
+    [MUGSHOT_NONE]     = {0x200, 0x200},
+    [MUGSHOT_SIDNEY]   = {0x200, 0x200},
+    [MUGSHOT_PHOEBE]   = {0x200, 0x200},
+    [MUGSHOT_GLACIA]   = {0x1B0, 0x1B0},
+    [MUGSHOT_DRAKE]    = {0x1A0, 0x1A0},
     [MUGSHOT_CHAMPION] = {0x188, 0x188},
     [MUGSHOT_MAY]      = {0x200, 0x200},
     [MUGSHOT_BRENDAN]  = {0x200, 0x200},
+    [MUGSHOT_ROXANNE]  = {0x200, 0x200},
+    [MUGSHOT_BRAWLY]   = {0x200, 0x200},
+    [MUGSHOT_WATTSON]  = {0x200, 0x200},
+    [MUGSHOT_FLANNERY] = {0x200, 0x200},
+    [MUGSHOT_NORMAN]   = {0x200, 0x200},
+    [MUGSHOT_WINONA]   = {0x200, 0x200},
+    [MUGSHOT_TATELIZA] = {0x200, 0x200},
+    [MUGSHOT_JUAN]     = {0x200, 0x200},
+    [MUGSHOT_WALLY]    = {0x200, 0x200},
+    [MUGSHOT_STEVEN]   = {0x200, 0x200},
 };
 static const s16 sMugshotsOpponentCoords[MUGSHOTS_COUNT][2] =
 {
@@ -576,6 +596,16 @@ static const s16 sMugshotsOpponentCoords[MUGSHOTS_COUNT][2] =
     [MUGSHOT_CHAMPION] = {-8,  7},
     [MUGSHOT_MAY]      = { 0,  0},
     [MUGSHOT_BRENDAN]  = { 0,  0},
+    [MUGSHOT_ROXANNE]  = { 0,  0},
+    [MUGSHOT_BRAWLY]   = { 0,  0},
+    [MUGSHOT_WATTSON]  = { 0,  0},
+    [MUGSHOT_FLANNERY] = { 0,  0},
+    [MUGSHOT_NORMAN]   = { 0,  0},
+    [MUGSHOT_WINONA]   = { 0,  0},
+    [MUGSHOT_TATELIZA] = { 0,  0},
+    [MUGSHOT_JUAN]     = { 0,  0},
+    [MUGSHOT_WALLY]    = { 0,  0},
+    [MUGSHOT_STEVEN]   = { 0,  0},
 };
 
 static const TransitionSpriteCallback sMugshotTrainerPicFuncs[] =
@@ -898,24 +928,33 @@ static const u16 sFieldEffectPal_Pokeball[] = INCBIN_U16("graphics/field_effects
 
 const struct SpritePalette gSpritePalette_Pokeball = {sFieldEffectPal_Pokeball, FLDEFF_PAL_TAG_POKEBALL_TRAIL};
 
+// New mugshots palettes can be added here
+static const u16 sMugshotPal_None[] = INCBIN_U16("graphics/battle_transitions/undefined_bg.gbapal");    // Fall-back palette if VAR_MUGSHOT_ID is undefined in event script
+// Elite four
 static const u16 sMugshotPal_Sidney[] = INCBIN_U16("graphics/battle_transitions/sidney_bg.gbapal");
 static const u16 sMugshotPal_Phoebe[] = INCBIN_U16("graphics/battle_transitions/phoebe_bg.gbapal");
 static const u16 sMugshotPal_Glacia[] = INCBIN_U16("graphics/battle_transitions/glacia_bg.gbapal");
-static const u16 sMugshotPal_Drake[] = INCBIN_U16("graphics/battle_transitions/drake_bg.gbapal");
+static const u16 sMugshotPal_Drake[]  = INCBIN_U16("graphics/battle_transitions/drake_bg.gbapal");
 static const u16 sMugshotPal_Champion[] = INCBIN_U16("graphics/battle_transitions/wallace_bg.gbapal");
-static const u16 sMugshotPal_Brendan[] = INCBIN_U16("graphics/battle_transitions/brendan_bg.gbapal");
+// Rival
+static const u16 sMugshotPal_Brendan[] = INCBIN_U16("graphics/battle_transitions/brendan_bg.gbapal");   // Pretty sure this palette is incomplete; just using GenericMale instead if Brendan is rival
 static const u16 sMugshotPal_May[] = INCBIN_U16("graphics/battle_transitions/may_bg.gbapal");
+// Gym leaders
+static const u16 sMugshotPal_Roxanne[] = INCBIN_U16("graphics/battle_transitions/roxanne_bg.gbapal");
+// Misc.
+static const u16 sMugshotPal_GenericMale[] = INCBIN_U16("graphics/battle_transitions/genericmale_bg.gbapal");
 
 static const u16 *const sOpponentMugshotsPals[MUGSHOTS_COUNT] =
 {
-    [MUGSHOT_NONE]     = sMugshotPal_Glacia,
+    [MUGSHOT_NONE]     = sMugshotPal_None,
     [MUGSHOT_SIDNEY]   = sMugshotPal_Sidney,
     [MUGSHOT_PHOEBE]   = sMugshotPal_Phoebe,
     [MUGSHOT_GLACIA]   = sMugshotPal_Glacia,
     [MUGSHOT_DRAKE]    = sMugshotPal_Drake,
     [MUGSHOT_CHAMPION] = sMugshotPal_Champion,
-    [MUGSHOT_MAY]      = sMugshotPal_Glacia,
-    [MUGSHOT_BRENDAN]  = sMugshotPal_Drake,
+    [MUGSHOT_MAY]      = sMugshotPal_May,
+    [MUGSHOT_BRENDAN]  = sMugshotPal_GenericMale,
+    [MUGSHOT_ROXANNE]  = sMugshotPal_Roxanne,
 };
 
 static const u16 *const sPlayerMugshotsPals[GENDER_COUNT] =

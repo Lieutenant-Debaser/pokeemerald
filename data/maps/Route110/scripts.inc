@@ -395,10 +395,12 @@ Route110_EventScript_RivalScene::
 	end
 
 Route110_EventScript_PlayMayMusic::
+	setvar VAR_MUGSHOT_ID, MUGSHOT_MAY
 	playbgm MUS_ENCOUNTER_MAY, TRUE
 	return
 
 Route110_EventScript_PlayBrendanMusic::
+	setvar VAR_MUGSHOT_ID, MUGSHOT_BRENDAN
 	playbgm MUS_ENCOUNTER_BRENDAN, TRUE
 	return
 

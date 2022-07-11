@@ -64,10 +64,12 @@ Route119_EventScript_RivalEncounter::
 	end
 
 Route119_EventScript_PlayMayMusic::
+	setvar VAR_MUGSHOT_ID, MUGSHOT_MAY
 	playbgm MUS_ENCOUNTER_MAY, TRUE
 	return
 
 Route119_EventScript_PlayBrendanMusic::
+	setvar VAR_MUGSHOT_ID, MUGSHOT_BRENDAN
 	playbgm MUS_ENCOUNTER_BRENDAN, TRUE
 	return
 
