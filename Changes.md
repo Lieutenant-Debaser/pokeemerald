@@ -46,7 +46,7 @@
     - East Area: New connection with cave that houses the Old Sea Map.
 
 - Faraway Island
-    - Technically in the game, but is now accessible by obtaining the Old Sea Map and going to the ship in Lilycove.
+    - Technically already in the game, but is now accessible by obtaining the Old Sea Map and going to the ship in Lilycove.
     - Mew is level 70 and has the moves Extrasensory, Calm Mind, Future Sight, and Recover.
 
 - Ominous Caverns (Currently Inaccessible)
@@ -62,3 +62,13 @@
 - Shiny Charm
     - Obtained from Mom after completing the National Dex.
     - Code implemented by chaining fishing also implemented this item's functionality as well.
+
+## Missing Pokemon
+- #283 Surskit
+    - Route 120
+- #315 Roselia
+    - Route 117
+- #335 Zangoose
+    - Route 114
+- #337 Lunatone
+    - Meteor Falls
