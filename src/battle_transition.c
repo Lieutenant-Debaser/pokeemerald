@@ -580,7 +580,7 @@ static const s16 sMugshotsOpponentRotationScales[MUGSHOTS_COUNT][2] =
     [MUGSHOT_WATTSON]  = {0x200, 0x200},
     [MUGSHOT_FLANNERY] = {0x200, 0x200},
     [MUGSHOT_NORMAN]   = {0x200, 0x200},
-    [MUGSHOT_WINONA]   = {0x200, 0x200},
+    [MUGSHOT_WINONA]   = {0x1CE, 0x1CE},
     [MUGSHOT_TATELIZA] = {0x200, 0x200},
     [MUGSHOT_JUAN]     = {0x200, 0x200},
     [MUGSHOT_WALLY]    = {0x200, 0x200},
@@ -601,7 +601,7 @@ static const s16 sMugshotsOpponentCoords[MUGSHOTS_COUNT][2] =
     [MUGSHOT_WATTSON]  = { 0,  0},
     [MUGSHOT_FLANNERY] = { 0,  0},
     [MUGSHOT_NORMAN]   = { -4,  0},
-    [MUGSHOT_WINONA]   = { 0,  0},
+    [MUGSHOT_WINONA]   = { -18,  2},
     [MUGSHOT_TATELIZA] = { 0,  0},
     [MUGSHOT_JUAN]     = { 0,  0},
     [MUGSHOT_WALLY]    = { 0,  0},
@@ -945,6 +945,7 @@ static const u16 sMugshotPal_Brawly[]   = INCBIN_U16("graphics/battle_transition
 static const u16 sMugshotPal_Wattson[]  = INCBIN_U16("graphics/battle_transitions/wattson_bg.gbapal");
 static const u16 sMugshotPal_Flannery[] = INCBIN_U16("graphics/battle_transitions/flannery_bg.gbapal");
 static const u16 sMugshotPal_Norman[]   = INCBIN_U16("graphics/battle_transitions/norman_bg.gbapal");
+static const u16 sMugshotPal_Winona[]   = INCBIN_U16("graphics/battle_transitions/winona_bg.gbapal");
 // Misc.
 static const u16 sMugshotPal_GenericMale[] = INCBIN_U16("graphics/battle_transitions/genericmale_bg.gbapal");
 
@@ -963,6 +964,7 @@ static const u16 *const sOpponentMugshotsPals[MUGSHOTS_COUNT] =
     [MUGSHOT_WATTSON]  = sMugshotPal_Wattson,
     [MUGSHOT_FLANNERY] = sMugshotPal_Flannery,
     [MUGSHOT_NORMAN]   = sMugshotPal_Norman,
+    [MUGSHOT_WINONA]   = sMugshotPal_Winona,
 };
 
 static const u16 *const sPlayerMugshotsPals[GENDER_COUNT] =
