@@ -3808,6 +3808,8 @@ const struct Trainer gTrainers[] = {
     [TRAINER_TATE_AND_LIZA_1] =
     {
         .partyFlags = F_TRAINER_PARTY_HELD_ITEM | F_TRAINER_PARTY_CUSTOM_MOVESET,
+        .hasCustomTransition = TRUE,
+        .transition = B_TRANSITION_MUGSHOT,
         .trainerClass = TRAINER_CLASS_LEADER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_FEMALE,
         .trainerPic = TRAINER_PIC_LEADER_TATE_AND_LIZA,
@@ -11240,6 +11242,8 @@ const struct Trainer gTrainers[] = {
     [TRAINER_TATE_AND_LIZA_2] =
     {
         .partyFlags = F_TRAINER_PARTY_HELD_ITEM | F_TRAINER_PARTY_CUSTOM_MOVESET,
+        .hasCustomTransition = TRUE,
+        .transition = B_TRANSITION_MUGSHOT,
         .trainerClass = TRAINER_CLASS_LEADER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_FEMALE,
         .trainerPic = TRAINER_PIC_LEADER_TATE_AND_LIZA,
@@ -11254,6 +11258,8 @@ const struct Trainer gTrainers[] = {
     [TRAINER_TATE_AND_LIZA_3] =
     {
         .partyFlags = F_TRAINER_PARTY_HELD_ITEM | F_TRAINER_PARTY_CUSTOM_MOVESET,
+        .hasCustomTransition = TRUE,
+        .transition = B_TRANSITION_MUGSHOT,
         .trainerClass = TRAINER_CLASS_LEADER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_FEMALE,
         .trainerPic = TRAINER_PIC_LEADER_TATE_AND_LIZA,
@@ -11268,6 +11274,8 @@ const struct Trainer gTrainers[] = {
     [TRAINER_TATE_AND_LIZA_4] =
     {
         .partyFlags = F_TRAINER_PARTY_HELD_ITEM | F_TRAINER_PARTY_CUSTOM_MOVESET,
+        .hasCustomTransition = TRUE,
+        .transition = B_TRANSITION_MUGSHOT,
         .trainerClass = TRAINER_CLASS_LEADER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_FEMALE,
         .trainerPic = TRAINER_PIC_LEADER_TATE_AND_LIZA,
@@ -11282,6 +11290,8 @@ const struct Trainer gTrainers[] = {
     [TRAINER_TATE_AND_LIZA_5] =
     {
         .partyFlags = F_TRAINER_PARTY_HELD_ITEM | F_TRAINER_PARTY_CUSTOM_MOVESET,
+        .hasCustomTransition = TRUE,
+        .transition = B_TRANSITION_MUGSHOT,
         .trainerClass = TRAINER_CLASS_LEADER,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_FEMALE,
         .trainerPic = TRAINER_PIC_LEADER_TATE_AND_LIZA,

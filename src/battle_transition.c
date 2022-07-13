@@ -564,6 +564,8 @@ static const u8 sMugshotsTrainerPicIDsTable[MUGSHOTS_COUNT] =
     [MUGSHOT_JUAN]     = TRAINER_PIC_LEADER_JUAN,
     [MUGSHOT_WALLY]    = TRAINER_PIC_WALLY,
     [MUGSHOT_STEVEN]   = TRAINER_PIC_STEVEN,
+    [MUGSHOT_MAXIE]    = TRAINER_PIC_MAGMA_LEADER_MAXIE,
+    [MUGSHOT_ARCHIE]   = TRAINER_PIC_AQUA_LEADER_ARCHIE,
 };
 static const s16 sMugshotsOpponentRotationScales[MUGSHOTS_COUNT][2] =
 {
@@ -585,6 +587,8 @@ static const s16 sMugshotsOpponentRotationScales[MUGSHOTS_COUNT][2] =
     [MUGSHOT_JUAN]     = {0x200, 0x200},
     [MUGSHOT_WALLY]    = {0x200, 0x200},
     [MUGSHOT_STEVEN]   = {0x200, 0x200},
+    [MUGSHOT_MAXIE]    = {0x200, 0x200},
+    [MUGSHOT_ARCHIE]   = {0x200, 0x200},
 };
 static const s16 sMugshotsOpponentCoords[MUGSHOTS_COUNT][2] =
 {
@@ -606,6 +610,8 @@ static const s16 sMugshotsOpponentCoords[MUGSHOTS_COUNT][2] =
     [MUGSHOT_JUAN]     = { 0,  0},
     [MUGSHOT_WALLY]    = { 0,  0},
     [MUGSHOT_STEVEN]   = { 0,  0},
+    [MUGSHOT_MAXIE]    = { 0,  0},
+    [MUGSHOT_ARCHIE]   = { 0,  0},
 };
 
 static const TransitionSpriteCallback sMugshotTrainerPicFuncs[] =
@@ -946,6 +952,8 @@ static const u16 sMugshotPal_Wattson[]  = INCBIN_U16("graphics/battle_transition
 static const u16 sMugshotPal_Flannery[] = INCBIN_U16("graphics/battle_transitions/flannery_bg.gbapal");
 static const u16 sMugshotPal_Norman[]   = INCBIN_U16("graphics/battle_transitions/norman_bg.gbapal");
 static const u16 sMugshotPal_Winona[]   = INCBIN_U16("graphics/battle_transitions/winona_bg.gbapal");
+static const u16 sMugshotPal_TateLiza[] = INCBIN_U16("graphics/battle_transitions/tateliza_bg.gbapal");
+static const u16 sMugshotPal_Juan[]     = INCBIN_U16("graphics/battle_transitions/juan_bg.gbapal");
 // Misc.
 static const u16 sMugshotPal_GenericMale[] = INCBIN_U16("graphics/battle_transitions/genericmale_bg.gbapal");
 
@@ -965,6 +973,13 @@ static const u16 *const sOpponentMugshotsPals[MUGSHOTS_COUNT] =
     [MUGSHOT_FLANNERY] = sMugshotPal_Flannery,
     [MUGSHOT_NORMAN]   = sMugshotPal_Norman,
     [MUGSHOT_WINONA]   = sMugshotPal_Winona,
+    [MUGSHOT_TATELIZA] = sMugshotPal_TateLiza,
+    [MUGSHOT_JUAN]     = sMugshotPal_Juan,
+    // v=== Unimplemented ===v
+    [MUGSHOT_WALLY]    = sMugshotPal_None,
+    [MUGSHOT_STEVEN]   = sMugshotPal_None,
+    [MUGSHOT_MAXIE]    = sMugshotPal_None,
+    [MUGSHOT_ARCHIE]   = sMugshotPal_None,
 };
 
 static const u16 *const sPlayerMugshotsPals[GENDER_COUNT] =
