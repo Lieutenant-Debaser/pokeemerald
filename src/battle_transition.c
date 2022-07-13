@@ -941,6 +941,7 @@ static const u16 sMugshotPal_Brendan[] = INCBIN_U16("graphics/battle_transitions
 static const u16 sMugshotPal_May[] = INCBIN_U16("graphics/battle_transitions/may_bg.gbapal");
 // Gym leaders
 static const u16 sMugshotPal_Roxanne[] = INCBIN_U16("graphics/battle_transitions/roxanne_bg.gbapal");
+static const u16 sMugshotPal_Brawly[]  = INCBIN_U16("graphics/battle_transitions/brawly_bg.gbapal");
 // Misc.
 static const u16 sMugshotPal_GenericMale[] = INCBIN_U16("graphics/battle_transitions/genericmale_bg.gbapal");
 
@@ -955,6 +956,7 @@ static const u16 *const sOpponentMugshotsPals[MUGSHOTS_COUNT] =
     [MUGSHOT_MAY]      = sMugshotPal_May,
     [MUGSHOT_BRENDAN]  = sMugshotPal_GenericMale,
     [MUGSHOT_ROXANNE]  = sMugshotPal_Roxanne,
+    [MUGSHOT_BRAWLY]   = sMugshotPal_Brawly,
 };
 
 static const u16 *const sPlayerMugshotsPals[GENDER_COUNT] =
