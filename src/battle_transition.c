@@ -600,7 +600,7 @@ static const s16 sMugshotsOpponentCoords[MUGSHOTS_COUNT][2] =
     [MUGSHOT_BRAWLY]   = { 0,  0},
     [MUGSHOT_WATTSON]  = { 0,  0},
     [MUGSHOT_FLANNERY] = { 0,  0},
-    [MUGSHOT_NORMAN]   = { 0,  0},
+    [MUGSHOT_NORMAN]   = { -4,  0},
     [MUGSHOT_WINONA]   = { 0,  0},
     [MUGSHOT_TATELIZA] = { 0,  0},
     [MUGSHOT_JUAN]     = { 0,  0},
@@ -931,17 +931,20 @@ const struct SpritePalette gSpritePalette_Pokeball = {sFieldEffectPal_Pokeball, 
 // New mugshots palettes can be added here
 static const u16 sMugshotPal_None[] = INCBIN_U16("graphics/battle_transitions/undefined_bg.gbapal");    // Fall-back palette if VAR_MUGSHOT_ID is undefined in event script
 // Elite four
-static const u16 sMugshotPal_Sidney[] = INCBIN_U16("graphics/battle_transitions/sidney_bg.gbapal");
-static const u16 sMugshotPal_Phoebe[] = INCBIN_U16("graphics/battle_transitions/phoebe_bg.gbapal");
-static const u16 sMugshotPal_Glacia[] = INCBIN_U16("graphics/battle_transitions/glacia_bg.gbapal");
-static const u16 sMugshotPal_Drake[]  = INCBIN_U16("graphics/battle_transitions/drake_bg.gbapal");
+static const u16 sMugshotPal_Sidney[]   = INCBIN_U16("graphics/battle_transitions/sidney_bg.gbapal");
+static const u16 sMugshotPal_Phoebe[]   = INCBIN_U16("graphics/battle_transitions/phoebe_bg.gbapal");
+static const u16 sMugshotPal_Glacia[]   = INCBIN_U16("graphics/battle_transitions/glacia_bg.gbapal");
+static const u16 sMugshotPal_Drake[]    = INCBIN_U16("graphics/battle_transitions/drake_bg.gbapal");
 static const u16 sMugshotPal_Champion[] = INCBIN_U16("graphics/battle_transitions/wallace_bg.gbapal");
 // Rival
-static const u16 sMugshotPal_Brendan[] = INCBIN_U16("graphics/battle_transitions/brendan_bg.gbapal");   // Pretty sure this palette is incomplete; just using GenericMale instead if Brendan is rival
-static const u16 sMugshotPal_May[] = INCBIN_U16("graphics/battle_transitions/may_bg.gbapal");
+static const u16 sMugshotPal_Brendan[]  = INCBIN_U16("graphics/battle_transitions/brendan_bg.gbapal");   // Pretty sure this palette is incomplete; just using GenericMale instead if Brendan is rival
+static const u16 sMugshotPal_May[]      = INCBIN_U16("graphics/battle_transitions/may_bg.gbapal");
 // Gym leaders
-static const u16 sMugshotPal_Roxanne[] = INCBIN_U16("graphics/battle_transitions/roxanne_bg.gbapal");
-static const u16 sMugshotPal_Brawly[]  = INCBIN_U16("graphics/battle_transitions/brawly_bg.gbapal");
+static const u16 sMugshotPal_Roxanne[]  = INCBIN_U16("graphics/battle_transitions/roxanne_bg.gbapal");
+static const u16 sMugshotPal_Brawly[]   = INCBIN_U16("graphics/battle_transitions/brawly_bg.gbapal");
+static const u16 sMugshotPal_Wattson[]  = INCBIN_U16("graphics/battle_transitions/wattson_bg.gbapal");
+static const u16 sMugshotPal_Flannery[] = INCBIN_U16("graphics/battle_transitions/flannery_bg.gbapal");
+static const u16 sMugshotPal_Norman[]   = INCBIN_U16("graphics/battle_transitions/norman_bg.gbapal");
 // Misc.
 static const u16 sMugshotPal_GenericMale[] = INCBIN_U16("graphics/battle_transitions/genericmale_bg.gbapal");
 
@@ -957,6 +960,9 @@ static const u16 *const sOpponentMugshotsPals[MUGSHOTS_COUNT] =
     [MUGSHOT_BRENDAN]  = sMugshotPal_GenericMale,
     [MUGSHOT_ROXANNE]  = sMugshotPal_Roxanne,
     [MUGSHOT_BRAWLY]   = sMugshotPal_Brawly,
+    [MUGSHOT_WATTSON]  = sMugshotPal_Wattson,
+    [MUGSHOT_FLANNERY] = sMugshotPal_Flannery,
+    [MUGSHOT_NORMAN]   = sMugshotPal_Norman,
 };
 
 static const u16 *const sPlayerMugshotsPals[GENDER_COUNT] =

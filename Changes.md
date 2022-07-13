@@ -72,3 +72,8 @@
     - Route 114
 - #337 Lunatone
     - Meteor Falls
+
+## Asthetics
+- Custom battle transitions before important battles.
+    - Rival fights
+    - Gym leaders
