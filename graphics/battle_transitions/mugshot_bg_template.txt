@@ -1,0 +1,19 @@
+JASC-PAL
+0100
+16
+Unknown
+Outer Border Line
+2nd Border Line
+3rd Border Line
+Inner Border Line
+Outer Scene Line
+2nd Scene Line
+3rd Scene Line
+4th Scene Line
+Inner Scene Line
+Unknown
+Unknown
+Unknown
+Unknown
+Unknown
+Unknown

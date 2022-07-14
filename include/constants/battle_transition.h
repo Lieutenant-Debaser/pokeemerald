@@ -1,6 +1,19 @@
 #ifndef GUARD_CONSTANTS_BATTLE_TRANSITION_H
 #define GUARD_CONSTANTS_BATTLE_TRANSITION_H
 
+/* Adding a custom mugshot transition can be done as follows:
+ *  1. Add a MUGSHOT_ constant in this file and update the LAST_MUGSHOT constant.
+ *  2. Create a .pal file in graphics/battle_transitions/ directory.
+ *  3. Create a [static const u16] variable in src/battle_transitions.c (approximately line 950) equal to an [INCBIN_U16].
+ *  4. In sOpponentMugshotsPal, assign the index of the constant defined here to the above [static const u16].
+ *  5. Specify which trainer sprite should appear in sMugshotsTrainerPicIDsTable.
+ *  6. Define the scale of the sprite in sMugshotsOpponentRotationScales.
+ *  7. Define the offset of the sprite in sMugshotsOpponentCoords.
+ *  8. In src/data/trainers.h locate the trainer to have the custom transition and define the following variables:
+ *      .hasCustomTransition = TRUE
+ *      .transition = B_TRANSITION_MUGSHOT
+ */
+
 #define MUGSHOT_NONE        0
 #define MUGSHOT_SIDNEY      1
 #define MUGSHOT_PHOEBE      2
