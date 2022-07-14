@@ -64,8 +64,18 @@
     - Code implemented by chaining fishing also implemented this item's functionality as well.
 
 ## Missing Pokemon
+- #057 Primeape
+    - Ominous Caverns
+- #061 Poliwhirl
+    - Ominous Caverns
+- #079 Slowpoke
+    - Ominous Caverns
 - #283 Surskit
     - Route 120
+- #307 Meditite
+    - Granite Cave
+- #308 Medicham
+    - Victory Road
 - #315 Roselia
     - Route 117
 - #335 Zangoose
