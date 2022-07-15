@@ -21,5 +21,17 @@ ProtoType_Text_NeverMind:
 	.string "Oop! Never mind then...$"
 
 ProtoType_EventScript_GiveShinyCharm::
-	giveitem ITEM_SHINY_CHARM
+	setextrashinytries 65500
+	lockall
+	waitse
+	playmoncry SPECIES_ZIGZAGOON, CRY_MODE_ENCOUNTER
+	delay 40
+	waitmoncry
+	setwildbattle SPECIES_ZIGZAGOON, 50
+	setflag FLAG_SYS_CTRL_OBJ_DELETE
+	special StartWildBossBattle
+	waitstate
+	clearflag FLAG_SYS_CTRL_OBJ_DELETE
+	specialvar VAR_RESULT, GetBattleOutcome
+	releaseall
 	end

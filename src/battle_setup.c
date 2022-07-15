@@ -638,6 +638,44 @@ void StartRegiBattle(void)
     TryUpdateGymLeaderRematchFromWild();
 }
 
+void StartWildBossBattle(void)
+{
+    u8 transitionId;
+
+    u16 species;
+    u8 heldItem[2];
+
+    ScriptContext2_Enable();
+    gMain.savedCallback = CB2_EndScriptedWildBattle;
+    
+    /* All of the bits for the u32 gBattleTypeFlags have been defined with specific flags. This is a (hopefully) working
+     * solution to the problem that will allow for unique boss Pokemon to have a specific flag signature. This is mainly
+     * for editing certain parameters (such as shiny rolls) for these unique battles.
+     */
+    gBattleTypeFlags = BATTLE_TYPE_LEGENDARY;
+
+    // Find out which battle is being initiated based on encounter
+    species = GetMonData(&gEnemyParty[0], MON_DATA_SPECIES, NULL);
+
+    // Boss Pokemon data are handled here
+    switch (species)
+    {
+        case SPECIES_ZIGZAGOON:
+            transitionId = B_TRANSITION_REGICE;
+            break;
+        default:
+            transitionId = B_TRANSITION_GRID_SQUARES;
+            break;
+    }
+
+    CreateBattleStartTask(transitionId, MUS_VS_REGI);
+
+    IncrementGameStat(GAME_STAT_TOTAL_BATTLES);
+    IncrementGameStat(GAME_STAT_WILD_BATTLES);
+    IncrementDailyWildBattles();
+    TryUpdateGymLeaderRematchFromWild();
+}
+
 static void CB2_EndWildBattle(void)
 {
     CpuFill16(0, (void*)(BG_PLTT), BG_PLTT_SIZE);

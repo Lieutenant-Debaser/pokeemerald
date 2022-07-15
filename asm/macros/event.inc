@@ -1729,6 +1729,15 @@
 	.2byte \quantity
 	.endm
 
+	@ Sets the value of gExtraShinyTries so as to allow for customizable shiny rates for event encounters.
+	@ Can be given a u16 value (0 - 65535), which is the number of extra tries that will be attempted.
+	@ Be warned that this value can overflow if there are other things that affect the gExtraShinyTries
+	@ variable, such as ITEM_SHINY_CHARM.
+	.macro setextrashinytries tries:req
+	.byte 0xe3
+	.2byte \tries
+	.endm
+
 
 @ Supplementary
 

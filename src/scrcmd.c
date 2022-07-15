@@ -1,5 +1,6 @@
 #include "global.h"
 #include "frontier_util.h"
+#include "battle.h"
 #include "battle_setup.h"
 #include "berry.h"
 #include "clock.h"
@@ -2307,4 +2308,10 @@ bool8 ScrCmd_warpwhitefade(struct ScriptContext *ctx)
     DoWhiteFadeWarp();
     ResetInitialPlayerAvatarState();
     return TRUE;
+}
+
+bool8 ScrCmd_setextrashinytries(struct ScriptContext *ctx)
+{
+    u16 shinyTries = ScriptReadHalfword(ctx);
+    gExtraShinyTries = shinyTries;
 }
