@@ -21,7 +21,7 @@ ProtoType_Text_NeverMind:
 	.string "Oop! Never mind then...$"
 
 ProtoType_EventScript_GiveShinyCharm::
-	setextrashinytries 65500
+	setextrashinytries 2049
 	lockall
 	waitse
 	playmoncry SPECIES_ZIGZAGOON, CRY_MODE_ENCOUNTER

@@ -648,10 +648,6 @@ void StartWildBossBattle(void)
     ScriptContext2_Enable();
     gMain.savedCallback = CB2_EndScriptedWildBattle;
     
-    /* All of the bits for the u32 gBattleTypeFlags have been defined with specific flags. This is a (hopefully) working
-     * solution to the problem that will allow for unique boss Pokemon to have a specific flag signature. This is mainly
-     * for editing certain parameters (such as shiny rolls) for these unique battles.
-     */
     gBattleTypeFlags = BATTLE_TYPE_LEGENDARY;
 
     // Find out which battle is being initiated based on encounter
