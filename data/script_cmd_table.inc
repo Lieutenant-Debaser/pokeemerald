@@ -208,7 +208,7 @@ gScriptCmdTable::
 	.4byte ScrCmd_setmoneventlegal          @ 0xcd
 	.4byte ScrCmd_checkmoneventlegal        @ 0xce
 	.4byte ScrCmd_trywondercardscript       @ 0xcf
-	.4byte ScrCmd_nop1                      @ 0xd0
+	.4byte ScrCmd_setextrashinytries        @ 0xd0
 	.4byte ScrCmd_warpspinenter             @ 0xd1
 	.4byte ScrCmd_setmonmetlocation         @ 0xd2
 	.4byte ScrCmd_moverotatingtileobjects   @ 0xd3
@@ -227,7 +227,6 @@ gScriptCmdTable::
 	.4byte ScrCmd_warpwhitefade             @ 0xe0
 	.4byte ScrCmd_buffercontestname         @ 0xe1
 	.4byte ScrCmd_bufferitemnameplural      @ 0xe2
-	.4byte ScrCmd_setextrashinytries
 
 gScriptCmdTableEnd::
 	.4byte ScrCmd_nop

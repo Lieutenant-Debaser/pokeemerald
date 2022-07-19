@@ -1595,10 +1595,13 @@
 	.byte 0xcf
 	.endm
 
-	@ Used only in FireRed/LeafGreen, does nothing in Emerald.
-	.macro setworldmapflag worldmapflag:req
+	@ Sets the value of gExtraShinyTries so as to allow for customizable shiny rates for event encounters.
+	@ Can be given a u16 value (0 - 65535), which is the number of extra tries that will be attempted.
+	@ Be warned that this value can overflow if there are other things that affect the gExtraShinyTries
+	@ variable, such as ITEM_SHINY_CHARM.
+	.macro setextrashinytries tries:req
 	.byte 0xd0
-	.2byte \worldmapflag
+	.2byte \tries
 	.endm
 
 	@ Warps the player to the specified map using a teleport effect. Effect is similar to warpteleport, but
@@ -1727,15 +1730,6 @@
 	stringvar \stringVarId
 	.2byte \item
 	.2byte \quantity
-	.endm
-
-	@ Sets the value of gExtraShinyTries so as to allow for customizable shiny rates for event encounters.
-	@ Can be given a u16 value (0 - 65535), which is the number of extra tries that will be attempted.
-	@ Be warned that this value can overflow if there are other things that affect the gExtraShinyTries
-	@ variable, such as ITEM_SHINY_CHARM.
-	.macro setextrashinytries tries:req
-	.byte 0xe3
-	.2byte \tries
 	.endm
 
 

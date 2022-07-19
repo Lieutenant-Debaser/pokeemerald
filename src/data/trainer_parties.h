@@ -12434,3 +12434,27 @@ static const struct TrainerMonNoItemDefaultMoves sParty_MayLinkPlaceholder[] = {
     .species = SPECIES_KYOGRE,
     }
 };
+
+static const struct TrainerMonItemCustomMoves sParty_AnnexGrunt1[] = {
+    {
+    .iv = 255,
+    .lvl = 60,
+    .species = SPECIES_MIGHTYENA,
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_POISON_FANG, MOVE_SAND_ATTACK, MOVE_PROTECT, MOVE_CRUNCH},
+    },
+    {
+    .iv = 255,
+    .lvl = 60,
+    .species = SPECIES_SHARPEDO,
+    .heldItem = ITEM_QUICK_CLAW,
+    .moves = {MOVE_SKULL_BASH, MOVE_AGILITY, MOVE_RAIN_DANCE, MOVE_DIVE},
+    },
+    {
+    .iv = 255,
+    .lvl = 62,
+    .species = SPECIES_GYARADOS,
+    .heldItem = ITEM_MAGNET,
+    .moves = {MOVE_RAIN_DANCE, MOVE_THUNDER, MOVE_WATER_PULSE, MOVE_ROAR},
+    }
+};
