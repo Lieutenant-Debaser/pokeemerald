@@ -12458,3 +12458,37 @@ static const struct TrainerMonItemCustomMoves sParty_AnnexGrunt1[] = {
     .moves = {MOVE_RAIN_DANCE, MOVE_THUNDER, MOVE_WATER_PULSE, MOVE_ROAR},
     }
 };
+
+static const struct TrainerMonItemCustomMoves sParty_AnnexGrunt2[] = {
+    {
+    .iv = 255,
+    .lvl = 60,
+    .species = SPECIES_MIGHTYENA,
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_TORMENT, MOVE_ODOR_SLEUTH, MOVE_SHADOW_BALL, MOVE_TAKE_DOWN},
+    },
+    {
+    .iv = 255,
+    .lvl = 61,
+    .species = SPECIES_CRAWDAUNT,
+    .heldItem = ITEM_MYSTIC_WATER,
+    .moves = {MOVE_SWORDS_DANCE, MOVE_CRABHAMMER, MOVE_DOUBLE_TEAM, MOVE_BODY_SLAM},
+    },
+};
+
+static const struct TrainerMonItemCustomMoves sParty_AnnexGrunt3[] = {
+    {
+    .iv = 255,
+    .lvl = 62,
+    .species = SPECIES_SHARPEDO,
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_SCARY_FACE, MOVE_DOUBLE_EDGE, MOVE_SCREECH, MOVE_CRUNCH},
+    },
+    {
+    .iv = 255,
+    .lvl = 63,
+    .species = SPECIES_CACTURNE,
+    .heldItem = ITEM_LAX_INCENSE,
+    .moves = {MOVE_SANDSTORM, MOVE_GROWTH, MOVE_FAINT_ATTACK, MOVE_NEEDLE_ARM},
+    },
+};

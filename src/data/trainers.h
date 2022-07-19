@@ -12104,11 +12104,13 @@ const struct Trainer gTrainers[] = {
     [TRAINER_ANNEXGRUNT_FIRST] =
     {
         .partyFlags = F_TRAINER_PARTY_HELD_ITEM | F_TRAINER_PARTY_CUSTOM_MOVESET,
+        .hasCustomTransition = TRUE,
+        .transition = B_TRANSITION_AQUA,
         .trainerClass = TRAINER_CLASS_TEAM_SQUALL,
         .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_AQUA,
         .trainerPic = TRAINER_PIC_AQUA_GRUNT_M,
         .trainerName = _("PEON"),
-        .items = {ITEM_HYPER_POTION, ITEM_FULL_HEAL},
+        .items = {ITEM_HYPER_POTION, ITEM_FULL_HEAL, ITEM_NONE, ITEM_NONE},
         .doubleBattle = FALSE,
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_TRY_TO_FAINT | AI_SCRIPT_CHECK_VIABILITY | AI_SCRIPT_RISKY,
         .partySize = ARRAY_COUNT(sParty_AnnexGrunt1),
@@ -12117,11 +12119,33 @@ const struct Trainer gTrainers[] = {
 
     [TRAINER_ANNEXGRUNT_SECOND] =
     {
-
+        .partyFlags = F_TRAINER_PARTY_HELD_ITEM | F_TRAINER_PARTY_CUSTOM_MOVESET,
+        .hasCustomTransition = TRUE,
+        .transition = B_TRANSITION_AQUA,
+        .trainerClass = F_TRAINER_FEMALE | TRAINER_CLASS_TEAM_SQUALL,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_AQUA,
+        .trainerPic = TRAINER_PIC_AQUA_GRUNT_F,
+        .trainerName = _("PEON"),
+        .items = {ITEM_ENERGY_ROOT, ITEM_FULL_HEAL, ITEM_NONE, ITEM_NONE},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_TRY_TO_FAINT | AI_SCRIPT_CHECK_VIABILITY | AI_SCRIPT_RISKY,
+        .partySize = ARRAY_COUNT(sParty_AnnexGrunt2),
+        .party = {.ItemCustomMoves = sParty_AnnexGrunt2},
     },
 
     [TRAINER_ANNEXGRUNT_THIRD] =
     {
-
+        .partyFlags = F_TRAINER_PARTY_HELD_ITEM | F_TRAINER_PARTY_CUSTOM_MOVESET,
+        .hasCustomTransition = TRUE,
+        .transition = B_TRANSITION_AQUA,
+        .trainerClass = TRAINER_CLASS_TEAM_SQUALL,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_AQUA,
+        .trainerPic = TRAINER_PIC_AQUA_GRUNT_M,
+        .trainerName = _("PEON"),
+        .items = {ITEM_HYPER_POTION, ITEM_FULL_HEAL, ITEM_NONE, ITEM_NONE},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_VIABILITY,
+        .partySize = ARRAY_COUNT(sParty_AnnexGrunt3),
+        .party = {.ItemCustomMoves = sParty_AnnexGrunt3},
     },
 };
