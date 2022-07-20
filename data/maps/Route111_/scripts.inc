@@ -32,7 +32,7 @@ Route111AnnexCave_EventScript_Grunt3::
 Route111AnnexCave_EventScript_Nixie1::
     msgbox Route111AnnexCave_Text_Nixie1Intro, MSGBOX_DEFAULT
     trainerbattle_no_intro TRAINER_SQUALLNIXIE1, Route111AnnexCave_Text_Nixie1Defeated
-    swetweather WEATHER_SANDSTORM
+    setweather WEATHER_SANDSTORM
     end
 
 Route111AnnexCave_EventScript_TrySpawnNixie1::
@@ -99,6 +99,9 @@ Route111AnnexCave_Text_Grunt3PostBattle:
 
 Route111AnnexCave_Text_Nixie1Intro:
     .string "Hi$"
+
+Route111AnnexCave_Text_Nixie1Defeated:
+    .string "Darn$"
     
 Route111AnnexCave_Text_TheresSomethingTucked::
     .string "There's something tucked behind the\n"
