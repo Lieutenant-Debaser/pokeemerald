@@ -50,6 +50,7 @@ Route111AnnexCave_EventScript_FindOldSeaMap::
     msgbox Route111AnnexCave_Text_TheresSomethingTucked, MSGBOX_DEFAULT
     giveitem ITEM_OLD_SEA_MAP
     setflag FLAG_ITEM_ROUTE111_ANNEXCAVE_OLDSEAMAP
+    clearflag FLAG_HIDE_ROUTE111CAVE_NIXIE
     return
 
 Route111AnnexCave_Text_Grunt1Intro:
