@@ -4965,6 +4965,7 @@ static void HandleEndTurn_BattleWon(void)
         case TRAINER_CLASS_MAGMA_ADMIN:
         case TRAINER_CLASS_MAGMA_LEADER:
         case TRAINER_CLASS_TEAM_SQUALL:
+        case TRAINER_CLASS_SQUALL_ADMIN:
             PlayBGM(MUS_VICTORY_AQUA_MAGMA);
             break;
         case TRAINER_CLASS_LEADER:

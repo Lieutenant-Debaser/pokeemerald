@@ -1,5 +1,18 @@
 Route111__MapScripts::
+    map_script MAP_SCRIPT_ON_LOAD, Route111AnnexCave_OnLoad
+    map_script MAP_SCRIPT_ON_TRANSITION, Route111AnnexCave_OnTransition
 	.byte 0
+
+
+Route111AnnexCave_OnLoad::
+
+Route111AnnexCave_OnTransition::
+    call_if_unset TRAINER_SQUALLNIXIE1, Route111AnnexCave_EventScript_LoadPeons
+
+Route111AnnexCave_EventScript_LoadPeons::
+    clearflag FLAG_EMPTY_ROUTE111CAVE_PEONS
+    return
+
 
 Route111AnnexCave_EventScript_Grunt1::
     trainerbattle_single TRAINER_ANNEXGRUNT_FIRST, Route111AnnexCave_Text_Grunt1Intro, Route111AnnexCave_Text_Grunt1Defeated
@@ -15,6 +28,19 @@ Route111AnnexCave_EventScript_Grunt3::
     trainerbattle_single TRAINER_ANNEXGRUNT_THIRD, Route111AnnexCave_Text_Grunt3Intro, Route111AnnexCave_Text_Grunt3Defeated
     msgbox Route111AnnexCave_Text_Grunt3PostBattle, MSGBOX_AUTOCLOSE
     end
+
+Route111AnnexCave_EventScript_Nixie1::
+    msgbox Route111AnnexCave_Text_Nixie1Intro, MSGBOX_DEFAULT
+    trainerbattle_no_intro TRAINER_SQUALLNIXIE1, Route111AnnexCave_Text_Nixie1Defeated
+    swetweather WEATHER_SANDSTORM
+    end
+
+Route111AnnexCave_EventScript_TrySpawnNixie1::
+    call_if_unset TRAINER_SQUALLNIXIE1, Route111AnnexCave_EventScript_SpawnNixie1
+    end
+
+Route111AnnexCave_EventScript_SpawnNixie1::
+    clearflag FLAG_HIDE_ROUTE111CAVE_NIXIE
 	
 Route111AnnexCave_EventScript_CheckOldSeaMap::
     call_if_unset FLAG_ITEM_ROUTE111_ANNEXCAVE_OLDSEAMAP, Route111AnnexCave_EventScript_FindOldSeaMap
@@ -34,7 +60,7 @@ Route111AnnexCave_Text_Grunt1Intro:
     .string "show you what we're all about!$"
 
 Route111AnnexCave_Text_Grunt1Defeated:
-    .string "Oh... well that's disappointing...$"
+    .string "Oh... Well that's disappointing...$"
 
 Route111AnnexCave_Text_Grunt1PostBattle:
     .string "This defeat means nothing. There are\n"
@@ -42,7 +68,7 @@ Route111AnnexCave_Text_Grunt1PostBattle:
 
 Route111AnnexCave_Text_Grunt2Intro:
     .string "Don't think you can just waltz in\n"
-    .string "without a fight. TEAM SQUALL is no\l"
+    .string "without a fight. TEAM SQUALL ain't no\l"
     .string "pushover like those TEAM AQUA guys!$"
 
 Route111AnnexCave_Text_Grunt2Defeated:
@@ -70,6 +96,9 @@ Route111AnnexCave_Text_Grunt3PostBattle:
     .string "and square, so the NUGGET is yours.\p"
     .string "That's the only treasure we have over\n"
     .string "by that rock...$"
+
+Route111AnnexCave_Text_Nixie1Intro:
+    .string "Hi$"
     
 Route111AnnexCave_Text_TheresSomethingTucked::
     .string "There's something tucked behind the\n"

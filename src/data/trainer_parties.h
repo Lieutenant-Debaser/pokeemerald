@@ -12452,7 +12452,7 @@ static const struct TrainerMonItemCustomMoves sParty_AnnexGrunt1[] = {
     },
     {
     .iv = 255,
-    .lvl = 62,
+    .lvl = 60,
     .species = SPECIES_GYARADOS,
     .heldItem = ITEM_MAGNET,
     .moves = {MOVE_RAIN_DANCE, MOVE_THUNDER, MOVE_WATER_PULSE, MOVE_ROAR},
@@ -12462,7 +12462,7 @@ static const struct TrainerMonItemCustomMoves sParty_AnnexGrunt1[] = {
 static const struct TrainerMonItemCustomMoves sParty_AnnexGrunt2[] = {
     {
     .iv = 255,
-    .lvl = 60,
+    .lvl = 61,
     .species = SPECIES_MIGHTYENA,
     .heldItem = ITEM_NONE,
     .moves = {MOVE_TORMENT, MOVE_ODOR_SLEUTH, MOVE_SHADOW_BALL, MOVE_TAKE_DOWN},
@@ -12490,5 +12490,29 @@ static const struct TrainerMonItemCustomMoves sParty_AnnexGrunt3[] = {
     .species = SPECIES_CACTURNE,
     .heldItem = ITEM_LAX_INCENSE,
     .moves = {MOVE_SANDSTORM, MOVE_GROWTH, MOVE_FAINT_ATTACK, MOVE_NEEDLE_ARM},
+    },
+};
+
+static const struct TrainerMonItemCustomMoves sParty_SquallAdminNixie1[] = {
+    {
+    .iv = 255,
+    .lvl = 62,
+    .species = SPECIES_AZUMARILL,
+    .heldItem = ITEM_NONE,
+    .moves = {MOVE_RAIN_DANCE, MOVE_DOUBLE_EDGE, MOVE_CHARM, MOVE_ICY_WIND},
+    },
+    {
+    .iv = 255,
+    .lvl = 63,
+    .species = SPECIES_LUDICOLO,
+    .heldItem = ITEM_FOCUS_BAND,
+    .moves = {MOVE_RAIN_DANCE, MOVE_WATER_GUN, MOVE_MEGA_DRAIN, MOVE_FLAIL},
+    },
+    {
+    .iv = 255,
+    .lvl = 64,
+    .species = SPECIES_WAILORD,
+    .heldItem = ITEM_CHESTO_BERRY,
+    .moves = {MOVE_REST, MOVE_SNORE, MOVE_ICE_BEAM, MOVE_WATER_SPOUT},
     },
 };

@@ -12122,8 +12122,8 @@ const struct Trainer gTrainers[] = {
         .partyFlags = F_TRAINER_PARTY_HELD_ITEM | F_TRAINER_PARTY_CUSTOM_MOVESET,
         .hasCustomTransition = TRUE,
         .transition = B_TRANSITION_AQUA,
-        .trainerClass = F_TRAINER_FEMALE | TRAINER_CLASS_TEAM_SQUALL,
-        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_AQUA,
+        .trainerClass = TRAINER_CLASS_TEAM_SQUALL,
+        .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_AQUA,
         .trainerPic = TRAINER_PIC_AQUA_GRUNT_F,
         .trainerName = _("PEON"),
         .items = {ITEM_ENERGY_ROOT, ITEM_FULL_HEAL, ITEM_NONE, ITEM_NONE},
@@ -12147,5 +12147,21 @@ const struct Trainer gTrainers[] = {
         .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_CHECK_VIABILITY,
         .partySize = ARRAY_COUNT(sParty_AnnexGrunt3),
         .party = {.ItemCustomMoves = sParty_AnnexGrunt3},
+    },
+
+    [TRAINER_SQUALLNIXIE1] =
+    {
+        .partyFlags = F_TRAINER_PARTY_HELD_ITEM | F_TRAINER_PARTY_CUSTOM_MOVESET,
+        .hasCustomTransition = TRUE,
+        .transition = B_TRANSITION_AQUA,
+        .trainerClass = TRAINER_CLASS_SQUALL_ADMIN,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_FEMALE | TRAINER_ENCOUNTER_MUSIC_AQUA,
+        .trainerPic = TRAINER_PIC_AQUA_ADMIN_F,
+        .trainerName = _("NIXIE"),
+        .items = {ITEM_FULL_HEAL, ITEM_FULL_HEAL, ITEM_NONE, ITEM_NONE},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_SCRIPT_CHECK_BAD_MOVE | AI_SCRIPT_TRY_TO_FAINT | AI_SCRIPT_CHECK_VIABILITY,
+        .partySize = ARRAY_COUNT(sParty_SquallAdminNixie1),
+        .party = {.ItemCustomMoves = sParty_SquallAdminNixie1},
     },
 };

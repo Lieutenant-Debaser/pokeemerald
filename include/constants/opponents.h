@@ -860,13 +860,14 @@
 #define TRAINER_ANNEXGRUNT_FIRST            855
 #define TRAINER_ANNEXGRUNT_SECOND           856
 #define TRAINER_ANNEXGRUNT_THIRD            857
+#define TRAINER_SQUALLNIXIE1                858
 
 // NOTE: Because each Trainer uses a flag to determine when they are defeated, there is only space for 9 additional trainers before trainer flag space overflows
 //       More space can be made by shifting flags around in constants/flags.h or changing how trainer flags are handled
 //       MAX_TRAINERS_COUNT can be increased but will take up additional saveblock space
 
-#define LAST_TRAINER                        TRAINER_ANNEXGRUNT_THIRD
+#define LAST_TRAINER                        TRAINER_SQUALLNIXIE1
 #define TRAINERS_COUNT                      (LAST_TRAINER + 1)
-#define MAX_TRAINERS_COUNT                  864
+#define MAX_TRAINERS_COUNT                  TRAINERS_COUNT
 
 #endif  // GUARD_CONSTANTS_OPPONENTS_H
