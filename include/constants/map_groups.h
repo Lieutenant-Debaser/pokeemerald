@@ -63,12 +63,10 @@
 #define MAP_UNDERWATER_ROUTE129            (54 | (0 << 8))
 #define MAP_UNDERWATER_ROUTE105            (55 | (0 << 8))
 #define MAP_UNDERWATER_ROUTE125            (56 | (0 << 8))
-#define MAP_ANNEX1_ROUTE111                (57 | (0 << 8))
-#define MAP_ROUTE111_                      (58 | (0 << 8))
-#define MAP_MEWTWO_LAIR                    (59 | (0 << 8))
-#define MAP_CERULEAN_CAVE_FLOOR_G_ENTRANCE (60 | (0 << 8))
-#define MAP_CERULEAN_CAVE_FLOOR_B1         (61 | (0 << 8))
-#define MAP_CERULEAN_CAVE_FLOOR_B1_NORTH   (62 | (0 << 8))
+#define MAP_MEWTWO_LAIR                    (57 | (0 << 8))
+#define MAP_CERULEAN_CAVE_FLOOR_G_ENTRANCE (58 | (0 << 8))
+#define MAP_CERULEAN_CAVE_FLOOR_B1         (59 | (0 << 8))
+#define MAP_CERULEAN_CAVE_FLOOR_B1_NORTH   (60 | (0 << 8))
 
 // gMapGroup_IndoorLittleroot
 #define MAP_LITTLEROOT_TOWN_BRENDANS_HOUSE_1F    (0 | (1 << 8))

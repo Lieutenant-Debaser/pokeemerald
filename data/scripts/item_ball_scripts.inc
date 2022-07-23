@@ -658,21 +658,6 @@ MagmaHideout_3F_3R_EventScript_ItemEscapeRope::
 	finditem ITEM_ESCAPE_ROPE
 	end
 	
-Route111_AnnexCave_EventScript_ItemNugget::
-    finditem ITEM_NUGGET
-    end
-    
-Route111_AnnexCave_EventScript_ItemOldSeaMap::
-	setflag FLAG_ENABLE_SHIP_FARAWAY_ISLAND
-	setflag FLAG_RECEIVED_OLD_SEA_MAP
-    msgbox Route111_AnnexCave_Text_TheresSomethingTucked, MSGBOX_DEFAULT
-    finditem ITEM_OLD_SEA_MAP
-    end
-    
-Route111_AnnexCave_Text_TheresSomethingTucked:
-    .string "There's something tucked behind the\n"
-    .string "rock...$"
-
 OminousCaverns_EventScript_ItemFullRestore::
 	finditem ITEM_FULL_RESTORE
 	end

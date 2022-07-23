@@ -918,7 +918,7 @@
 #define FLAG_HIDE_BATTLE_TOWER_MULTI_BATTLE_PARTNER_ALT_1           0x360
 #define FLAG_HIDE_BATTLE_TOWER_MULTI_BATTLE_PARTNER_ALT_2           0x361
 #define FLAG_HIDE_PETALBURG_GYM_WALLY                               0x362
-//#define FLAG_UNKNOWN_0x363                                          0x363 // Set, however has no purpose.
+#define FLAG_UNKNOWN_0x363                                          0x363 // Set, however has no purpose.
 #define FLAG_HIDE_LITTLEROOT_TOWN_FAT_MAN                           0x364
 #define FLAG_HIDE_SLATEPORT_CITY_STERNS_SHIPYARD_MR_BRINEY          0x365
 #define FLAG_HIDE_LANETTES_HOUSE_LANETTE                            0x366
@@ -966,7 +966,7 @@
 #define FLAG_HIDE_MAUVILLE_CITY_WATTSON                             0x390
 #define FLAG_HIDE_MAUVILLE_GYM_WATTSON                              0x391
 #define FLAG_HIDE_ROUTE_121_TEAM_AQUA_GRUNTS                        0x392
-//#define FLAG_UNKNOWN_0x393                                          0x393 // Set, however has no purpose.
+#define FLAG_UNKNOWN_0x393                                          0x393 // Set, however has no purpose.
 #define FLAG_HIDE_MT_PYRE_SUMMIT_ARCHIE                             0x394
 #define FLAG_HIDE_MT_PYRE_SUMMIT_TEAM_AQUA                          0x395
 #define FLAG_HIDE_BATTLE_TOWER_REPORTER                             0x396
@@ -1052,9 +1052,6 @@
 #define FLAG_HIDE_SOOTOPOLIS_CITY_GROUDON                           0x3E6
 #define FLAG_HIDE_RUSTBORO_CITY_POKEMON_SCHOOL_SCOTT                0x3E7
 
-// Flags that have been moved around to act as event flags
-#define FLAG_EMPTY_ROUTE111CAVE_PEONS                               0x363
-#define FLAG_HIDE_ROUTE111CAVE_NIXIE                                0x393
 
 // Item Ball Flags
 #define FLAG_ITEM_ROUTE_102_POTION                                  0x3E8
@@ -1229,9 +1226,8 @@
 #define FLAG_ITEM_SAFARI_ZONE_NORTH_EAST_NUGGET                     0x491
 #define FLAG_ITEM_SAFARI_ZONE_SOUTH_EAST_BIG_PEARL                  0x492
 
-// Route 111 Annex Side Area
-#define FLAG_ITEM_ROUTE111_ANNEXCAVE_NUGGET                         0x493 // Nugget
-#define FLAG_ITEM_ROUTE111_ANNEXCAVE_OLDSEAMAP                      0x494 // Old Sea Map hidden in rock tile
+#define FLAG_ITEM_UNUSED_0x496                                      0x493 // Nugget
+#define FLAG_ITEM_UNUSED_0x494                                      0x494 // Old Sea Map hidden in rock tile
 
 // Cerulean Cave (Ominous Caverns)
 #define FLAG_ITEM_OMINOUS_CAVERNS_B1_FULL_RESTORE                   0x495 // Full restore

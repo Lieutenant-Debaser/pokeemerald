@@ -16,36 +16,7 @@ Route111_MapScripts::
 Route111_OnLoad:
 	call_if_unset FLAG_REGI_DOORS_OPENED, Route111_EventScript_CloseDesertRuins
 	call_if_eq VAR_MIRAGE_TOWER_STATE, 1, Route111_EventScript_ShowTemporaryMirageTower
-	call Route111_EventScript_SetAnnexPath
 	end
-	
-@ A hack to enable the path to the annex where the Old Sea Map is to be accessible	
-Route111_EventScript_SetAnnexPath::
-    @ Set ROCK CLIMB tiles
-	setmetatile 37, 44, METATILE_Mauville_RockClimb_RockBase, TRUE
-	setmetatile 38, 43, METATILE_Mauville_RockClimb_RockBase, TRUE
-	setmetatile 32, 46, METATILE_Mauville_RockClimb_SandBase, TRUE
-	@ Set walkable tiles
-	setmetatile 33, 45, 0x071, FALSE
-	setmetatile 34, 45, 0x071, FALSE
-	setmetatile 35, 45, 0x071, FALSE
-	setmetatile 36, 45, 0x071, FALSE
-	setmetatile 33, 46, 0x071, FALSE
-	setmetatile 34, 46, 0x071, FALSE
-	setmetatile 36, 44, 0x071, FALSE
-	setmetatile 39, 42, 0x071, FALSE
-	setmetatile 39, 43, 0x071, FALSE
-	@ Set rocks
-	setmetatile 35, 44, 0x0E1, TRUE
-	setmetatile 36, 43, 0x0E1, TRUE
-	setmetatile 34, 47, 0x0E1, TRUE
-	setmetatile 35, 46, 0x0E1, TRUE
-	setmetatile 36, 46, 0x0E1, TRUE
-	setmetatile 39, 44, 0x0E1, TRUE
-	setmetatile 39, 41, 0x0E1, TRUE
-	setmetatile 39, 40, 0x0E1, TRUE
-	setmetatile 39, 37, 0x0E1, TRUE
-	return
 
 Route111_EventScript_CloseDesertRuins::
 	setmetatile 29, 86, METATILE_General_RockWall_RockBase, TRUE
