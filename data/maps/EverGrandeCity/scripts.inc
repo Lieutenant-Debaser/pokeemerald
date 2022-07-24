@@ -21,18 +21,22 @@ EverGrandeCity_EventScript_GuardCave::
 	return
 
 EverGrandeCity_EventScript_Obj_CaveGuard::
+	lockall
 	goto_if_set FLAG_IS_CHAMPION, EverGrandeCity_EventScript_Obj_NoGuardCave
 	goto EverGrandeCity_EventScript_Obj_DoGuardCave
+	releaseall
 	end
 
 EverGrandeCity_EventScript_Obj_NoGuardCave::
 	goto_if_unset FLAG_EVERGRANDE_GUARD_MOVED, EverGrandeCity_EventScript_Obj_DoGuardMove
 	msgbox EverGrandeCity_Text_NoGuardCave, MSGBOX_DEFAULT
 	applymovement LOCALID_GUARD, Common_Movement_FaceOriginalDirection
+	releaseall
 	end
 
 EverGrandeCity_EventScript_Obj_DoGuardCave::
 	msgbox EverGrandeCity_Text_DoGuardCave, MSGBOX_DEFAULT
+	releaseall
 	end
 
 EverGrandeCity_EventScript_Obj_DoGuardMove::
@@ -40,6 +44,7 @@ EverGrandeCity_EventScript_Obj_DoGuardMove::
 	msgbox EverGrandeCity_Text_DoGuardMove, MSGBOX_DEFAULT
 	applymovement LOCALID_GUARD, Common_Movement_FaceOriginalDirection
 	setflag FLAG_EVERGRANDE_GUARD_MOVED
+	releaseall
 	end
 
 
