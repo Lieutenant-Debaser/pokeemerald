@@ -21,30 +21,33 @@ EverGrandeCity_EventScript_GuardCave::
 	return
 
 EverGrandeCity_EventScript_Obj_CaveGuard::
-	lockall
+	lock
 	goto_if_set FLAG_IS_CHAMPION, EverGrandeCity_EventScript_Obj_NoGuardCave
 	goto EverGrandeCity_EventScript_Obj_DoGuardCave
-	releaseall
+	release
 	end
 
 EverGrandeCity_EventScript_Obj_NoGuardCave::
 	goto_if_unset FLAG_EVERGRANDE_GUARD_MOVED, EverGrandeCity_EventScript_Obj_DoGuardMove
 	msgbox EverGrandeCity_Text_NoGuardCave, MSGBOX_DEFAULT
 	applymovement LOCALID_GUARD, Common_Movement_FaceOriginalDirection
-	releaseall
+	waitmovement 0
+	release
 	end
 
 EverGrandeCity_EventScript_Obj_DoGuardCave::
 	msgbox EverGrandeCity_Text_DoGuardCave, MSGBOX_DEFAULT
-	releaseall
+	release
 	end
 
 EverGrandeCity_EventScript_Obj_DoGuardMove::
 	applymovement LOCALID_GUARD, Common_Movement_ExclamationMark
+	waitmovement 0
 	msgbox EverGrandeCity_Text_DoGuardMove, MSGBOX_DEFAULT
 	applymovement LOCALID_GUARD, Common_Movement_FaceOriginalDirection
+	waitmovement 0
 	setflag FLAG_EVERGRANDE_GUARD_MOVED
-	releaseall
+	release
 	end
 
 
@@ -100,7 +103,7 @@ EverGrandeCity_Text_NoGuardCave:
 	.string "the cave at your leisure.$"
 
 EverGrandeCity_Text_DoGuardCave:
-	.string "Sorry kid, no entry. Powerful POKéMON are\n"
-	.string "causing a ruckus down in these caves, and\l"
-	.string "I've been instructed by the ELITE FOUR not\l"
-	.string "to let anyone in.$"
+	.string "Sorry kid, no entry. Powerful POKéMON\n"
+	.string "are causing a ruckus down in these\l"
+	.string "caves, and I've been instructed by the\l"
+	.string "ELITE FOUR not to let anyone in.$"
