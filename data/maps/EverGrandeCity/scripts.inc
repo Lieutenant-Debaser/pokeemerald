@@ -39,6 +39,7 @@ EverGrandeCity_EventScript_Obj_DoGuardMove::
 	applymovement LOCALID_GUARD, Common_Movement_ExclamationMark
 	msgbox EverGrandeCity_Text_DoGuardMove, MSGBOX_DEFAULT
 	applymovement LOCALID_GUARD, Common_Movement_FaceOriginalDirection
+	setflag FLAG_EVERGRANDE_GUARD_MOVED
 	end
 
 
