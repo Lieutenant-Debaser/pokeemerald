@@ -1,0 +1,73 @@
+// Constant for Objects
+const CAVE_GUARD = 1
+
+// Map scripts
+mapscripts EverGrandeCity_MapScripts {
+	MAP_SCRIPT_ON_TRANSITION {
+		if (flag(FLAG_SYS_WEATHER_CTRL)) {
+        	call (Common_EventScript_SetAbnormalWeather)
+        }
+        if (!flag(FLAG_EVERGRANDE_GUARD_MOVED)) {
+        	call (EverGrandeCity_SetGuardPosition)
+        }
+    }
+}
+
+// Set North Ever Grande City as visited
+script EverGrandeCity_EventScript_SetVisitedEverGrande {
+	setflag (FLAG_VISITED_EVER_GRANDE_CITY)
+    setvar (VAR_TEMP_1, 1)
+    end
+}
+
+// Set guard in front of cave (default position is next to cave)
+script EverGrandeCity_SetGuardPosition {
+	setobjectxyperm (CAVE_GUARD, 29, 7)
+}
+
+// Script for guard in front of cave
+//  Appearance in map is dependent on FLAG_EVERGRANDE_GUARD_MOVED
+script EverGrandeCity_CaveGuard {
+	lock
+    applymovement(CAVE_GUARD, Common_Movement_FacePlayer)
+    waitmovement(0)
+    // Player is not champion yet, don't admit to cave
+    if (!flag(FLAG_IS_CHAMPION)) {
+    		msgbox(format("Sorry kid, no entry. Powerful POKéMON are causing a 
+                   ruckus down in these caves, and I've been instructed by the 
+                   ELITE FOUR not to let anyone in."), MSGBOX_DEFAULT)
+            applymovement(CAVE_GUARD, Common_Movement_FaceOriginalDirection)
+            waitmovement(0)
+	}
+    // Player is now champion, but guard hasn't been spoken to yet
+    elif (!flag(FLAG_EVERGRANDE_GUARD_MOVED)) {
+    		msgbox(format("Oh! CHAMPION {PLAYER}{KUN}...\lCould you help with something?
+                           \pThere's an AGGRON in this cave that's been causing quite a stir of late. Normally, one of
+                             the ELITE FOUR would have dealt with it by now, but with all the new trainers coming in, 
+                             they've been pretty busy.
+                           \pMaybe, if you've got the time, you might be able to handle it. I'll leave the entrance
+                             open for you and let everyone know to stay clear."), MSGBOX_DEFAULT)
+            closemessage
+            fadescreen (FADE_TO_BLACK)
+			setflag(FLAG_EVERGRANDE_GUARD_MOVED)
+            removeobject (CAVE_GUARD)
+            fadescreen (FADE_FROM_BLACK)
+            waitmovement (0)
+    }
+    release
+    end
+}
+
+// Sign Scripts
+script EverGrandeCity_EventScript_VictoryRoadSign {
+	msgbox(format("ENTERING VICTORY ROAD"), MSGBOX_SIGN)
+}
+
+script EverGrandeCity_EventScript_CitySign {
+	msgbox(format("“EVER GRANDE CITY\pThe paradise of flowers, the sea and  
+           POKéMON.“"), MSGBOX_SIGN)
+}
+
+script EverGrandeCity_EventScript_PokemonLeagueSign {
+	msgbox(format("ENTERING POKéMON LEAGUE\nCENTER GATE"), MSGBOX_SIGN)
+}
