@@ -4470,6 +4470,16 @@
       "secondary_tileset": "gTileset_NavelRock",
       "border_filepath": "data/layouts/CeruleanCave_FloorB1_North/border.bin",
       "blockdata_filepath": "data/layouts/CeruleanCave_FloorB1_North/map.bin"
+    },
+    {
+      "id": "LAYOUT_FERRITE_CAVE_G",
+      "name": "FerriteCaveG_Layout",
+      "width": 20,
+      "height": 20,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Cave",
+      "border_filepath": "data/layouts/FerriteCaveG/border.bin",
+      "blockdata_filepath": "data/layouts/FerriteCaveG/map.bin"
     }
   ]
 }
