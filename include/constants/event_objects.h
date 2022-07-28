@@ -79,7 +79,8 @@
 #define OBJ_EVENT_GFX_LUCY                        75
 //#define OBJ_EVENT_GFX_UNUSED_NATU_DOLL            76
 #define OBJ_EVENT_GFX_MEWTWO                      76
-#define OBJ_EVENT_GFX_UNUSED_MAGNEMITE_DOLL       77
+//#define OBJ_EVENT_GFX_UNUSED_MAGNEMITE_DOLL       77
+#define OBJ_EVENT_GFX_AGGRON                      77
 #define OBJ_EVENT_GFX_UNUSED_SQUIRTLE_DOLL        78
 #define OBJ_EVENT_GFX_UNUSED_WOOPER_DOLL          79
 #define OBJ_EVENT_GFX_UNUSED_PIKACHU_DOLL         80

@@ -656,15 +656,29 @@ void StartWildBossBattle(void)
     // Boss Pokemon data are handled here
     switch (species)
     {
+        // Zigzagoon for testing
         case SPECIES_ZIGZAGOON:
             transitionId = B_TRANSITION_REGICE;
+            break;
+        // Aggron found in Ferrite Cave
+        case SPECIES_AGGRON:
+            SetMonMoveSlot(&gEnemyParty[0], MOVE_DOUBLE_EDGE, 0);
+            SetMonMoveSlot(&gEnemyParty[0], MOVE_DOUBLE_EDGE, 1);
+            SetMonMoveSlot(&gEnemyParty[0], MOVE_DOUBLE_EDGE, 2);
+            SetMonMoveSlot(&gEnemyParty[0], MOVE_DOUBLE_EDGE, 3);
+            heldItem[0] = ITEM_MAGNET;
+            heldItem[1] = ITEM_MAGNET >> 8;
+            SetMonData    (&gEnemyParty[0], MON_DATA_HELD_ITEM, heldItem);
+            SetMonData    (&gEnemyParty[0], MON_DATA_ABILITY_NUM, (u8*)0);
+            SetMonData    (&gEnemyParty[0], MON_DATA_HP_IV, (u8*)31);
+            transitionId = B_TRANSITION_SLICE;
             break;
         default:
             transitionId = B_TRANSITION_GRID_SQUARES;
             break;
     }
 
-    CreateBattleStartTask(transitionId, MUS_VS_REGI);
+    CreateBattleStartTask(transitionId, MUS_C_VS_LEGEND_BEAST);
 
     IncrementGameStat(GAME_STAT_TOTAL_BATTLES);
     IncrementGameStat(GAME_STAT_WILD_BATTLES);

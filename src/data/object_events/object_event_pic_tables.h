@@ -2184,3 +2184,15 @@ static const struct SpriteFrameImage sPicTable_Mewtwo[] = {
     overworld_frame(gObjectEventPic_Mewtwo, 2, 2, 0),
     overworld_frame(gObjectEventPic_Mewtwo, 2, 2, 0),
 };
+
+static const struct SpriteFrameImage sPicTable_Aggron[] = {
+    obj_frame_tiles(gObjectEventPic_Aggron),
+    obj_frame_tiles(gObjectEventPic_Aggron),
+    obj_frame_tiles(gObjectEventPic_Aggron),
+    obj_frame_tiles(gObjectEventPic_Aggron),
+    obj_frame_tiles(gObjectEventPic_Aggron),
+    obj_frame_tiles(gObjectEventPic_Aggron),
+    obj_frame_tiles(gObjectEventPic_Aggron),
+    obj_frame_tiles(gObjectEventPic_Aggron),
+    obj_frame_tiles(gObjectEventPic_Aggron),
+};

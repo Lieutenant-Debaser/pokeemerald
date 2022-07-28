@@ -1,1 +1,46 @@
-mapscripts FerriteCaveG_MapScripts {}
+const AGGRON_BOSS = 1
+
+mapscripts FerriteCaveG_MapScripts {
+    MAP_SCRIPT_ON_RESUME {
+        if(flag(FLAG_SYS_CTRL_OBJ_DELETE)) {
+            specialvar (VAR_RESULT, GetBattleOutcome)
+            if(var(VAR_RESULT) != B_OUTCOME_CAUGHT) {
+                call (Common_EventScript_NopReturn)
+            }
+            else {
+                removeobject(AGGRON_BOSS)
+            }
+            return
+        }
+    }
+
+}
+
+script WildBoss_Aggron {
+    lockall
+    // Set Aggron to have ~1/64 chance of being shiny
+    setextrashinytries(166)
+    waitse
+    playmoncry(SPECIES_AGGRON, CRY_MODE_ENCOUNTER)
+    delay(40)
+    waitmoncry
+    setwildbattle(SPECIES_AGGRON, 60)
+    setflag(FLAG_SYS_CTRL_OBJ_DELETE)
+    special(StartWildBossBattle)
+    waitstate
+    clearflag(FLAG_SYS_CTRL_OBJ_DELETE)
+    specialvar(VAR_RESULT, GetBattleOutcome)
+    switch(var(VAR_RESULT)){
+        case B_OUTCOME_WON:
+            goto(Common_EventScript_RemoveStaticPokemon)
+            break
+        case B_OUTCOME_RAN:
+        case B_OUTCOME_PLAYER_TELEPORTED:
+            setvar(VAR_0x8004, SPECIES_AGGRON)
+            goto(Common_EventScript_LegendaryFlewAway)
+            break
+    }
+    setflag(FLAG_HIDE_FERRITE_CAVE_AGGRON)
+    releaseall
+    end
+}

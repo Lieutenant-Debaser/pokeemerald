@@ -364,5 +364,10 @@ const u16 gObjectEventPal_Lugia[] = INCBIN_U16("graphics/object_events/palettes/
 const u32 gObjectEventPic_HoOh[] = INCBIN_U32("graphics/object_events/pics/pokemon/ho_oh.4bpp");
 const u16 gObjectEventPal_HoOh[] = INCBIN_U16("graphics/object_events/palettes/ho_oh.gbapal");
 
+// Mewtwo Overworld Object and Palette
 const u16 gObjectEventPic_Mewtwo[] = INCBIN_U16("graphics/object_events/pics/pokemon/mewtwo.4bpp");
 const u16 gObjectEventPal_NpcPink[] = INCBIN_U16("graphics/object_events/palettes/npc_pink.gbapal");
+
+// Aggron Overworld Object and Palette
+const u32 gObjectEventPic_Aggron[] = INCBIN_U32("graphics/object_events/pics/pokemon/aggron.4bpp");
+const u16 gObjectEventPal_Aggron[] = INCBIN_U16("graphics/object_events/palettes/aggron.gbapal");

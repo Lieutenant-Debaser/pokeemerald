@@ -876,7 +876,7 @@
 #define FLAG_HIDE_MOSSDEEP_CITY_TEAM_MAGMA                          0x337
 #define FLAG_HIDE_PETALBURG_GYM_WALLYS_DAD                          0x338
 
-#define FLAG_UNUSED_0x339                                           0x339 // Unused Flag; Reclaimed
+#define FLAG_HIDE_FERRITE_CAVE_AGGRON                               0x339 // Determines if the boss Aggron in Ferrite Cave should appear
 
 #define FLAG_HIDE_SOOTOPOLIS_CITY_ARCHIE                            0x33A
 #define FLAG_HIDE_SOOTOPOLIS_CITY_MAXIE                             0x33B

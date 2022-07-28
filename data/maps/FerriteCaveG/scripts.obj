@@ -1,0 +1,20 @@
+FerriteCaveG_MapScripts::
+	map_script MAP_SCRIPT_ON_RESUME, FerriteCaveG_MapScripts_MAP_SCRIPT_ON_RESUME
+	.byte 0
+
+FerriteCaveG_MapScripts_MAP_SCRIPT_ON_RESUME:
+	goto_if_set FLAG_SYS_CTRL_OBJ_DELETE, FerriteCaveG_MapScripts_MAP_SCRIPT_ON_RESUME_1
+	return
+
+FerriteCaveG_MapScripts_MAP_SCRIPT_ON_RESUME_1:
+	specialvar VAR_RESULT, GetBattleOutcome
+	compare VAR_RESULT, B_OUTCOME_CAUGHT
+	goto_if_ne FerriteCaveG_MapScripts_MAP_SCRIPT_ON_RESUME_4
+	removeobject VAR_LAST_TALKED
+FerriteCaveG_MapScripts_MAP_SCRIPT_ON_RESUME_3:
+	return
+
+FerriteCaveG_MapScripts_MAP_SCRIPT_ON_RESUME_4:
+	Common_EventScript_NopReturn
+	goto FerriteCaveG_MapScripts_MAP_SCRIPT_ON_RESUME_3
+
