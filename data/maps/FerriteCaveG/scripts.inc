@@ -21,14 +21,13 @@ FerriteCaveG_MapScripts_MAP_SCRIPT_ON_RESUME_4:
 
 WildBoss_Aggron::
 	lockall
-	setextrashinytries 166
+	setextrashinytries 65500
 	waitse
 	playmoncry SPECIES_AGGRON, CRY_MODE_ENCOUNTER
 	delay 40
 	waitmoncry
-	setwildbattle SPECIES_AGGRON, 60
-	setflag FLAG_SYS_CTRL_OBJ_DELETE
 	special StartWildBossBattle
+	setflag FLAG_SYS_CTRL_OBJ_DELETE
 	waitstate
 	clearflag FLAG_SYS_CTRL_OBJ_DELETE
 	specialvar VAR_RESULT, GetBattleOutcome

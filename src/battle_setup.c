@@ -47,6 +47,9 @@
 #include "constants/trainer_hill.h"
 #include "constants/weather.h"
 
+#include "global.fieldmap.h"
+#include "constants/layouts.h"
+
 enum {
     TRANSITION_TYPE_NORMAL,
     TRANSITION_TYPE_CAVE,
@@ -641,44 +644,50 @@ void StartRegiBattle(void)
 void StartWildBossBattle(void)
 {
     u8 transitionId;
-
-    u16 species;
+    u16 musicId;
     u8 heldItem[2];
+    u8 ivPtr[6];
 
     ScriptContext2_Enable();
     gMain.savedCallback = CB2_EndScriptedWildBattle;
     
     gBattleTypeFlags = BATTLE_TYPE_LEGENDARY;
 
-    // Find out which battle is being initiated based on encounter
-    species = GetMonData(&gEnemyParty[0], MON_DATA_SPECIES, NULL);
-
     // Boss Pokemon data are handled here
-    switch (species)
+    switch (gMapHeader.mapLayoutId)
     {
-        // Zigzagoon for testing
-        case SPECIES_ZIGZAGOON:
-            transitionId = B_TRANSITION_REGICE;
-            break;
         // Aggron found in Ferrite Cave
-        case SPECIES_AGGRON:
+        case LAYOUT_FERRITE_CAVE_G:
+            // Set desired IVs
+            ivPtr[STAT_HP]    = 0x1F;
+            ivPtr[STAT_ATK]   = 0x1F;
+            ivPtr[STAT_DEF]   = 0x1F;
+            ivPtr[STAT_SPEED] = 0x00;
+            ivPtr[STAT_SPATK] = 0x00;
+            ivPtr[STAT_SPDEF] = 0x00;
+            // Create the Pokemon
+            CreateMonWithIVs(&gEnemyParty[0], SPECIES_AGGRON, 60, ivPtr);
+
+            // Set Pokemon's moves
             SetMonMoveSlot(&gEnemyParty[0], MOVE_DOUBLE_EDGE, 0);
-            SetMonMoveSlot(&gEnemyParty[0], MOVE_DOUBLE_EDGE, 1);
-            SetMonMoveSlot(&gEnemyParty[0], MOVE_DOUBLE_EDGE, 2);
-            SetMonMoveSlot(&gEnemyParty[0], MOVE_DOUBLE_EDGE, 3);
+            SetMonMoveSlot(&gEnemyParty[0], MOVE_EARTHQUAKE, 1);
+            SetMonMoveSlot(&gEnemyParty[0], MOVE_SURF, 2);
+            SetMonMoveSlot(&gEnemyParty[0], MOVE_DIG, 3);
+            // Give Pokemon item
             heldItem[0] = ITEM_MAGNET;
             heldItem[1] = ITEM_MAGNET >> 8;
             SetMonData    (&gEnemyParty[0], MON_DATA_HELD_ITEM, heldItem);
-            SetMonData    (&gEnemyParty[0], MON_DATA_ABILITY_NUM, (u8*)0);
-            SetMonData    (&gEnemyParty[0], MON_DATA_HP_IV, (u8*)31);
+            // Set battle transition and music
             transitionId = B_TRANSITION_SLICE;
+            musicId = MUS_C_VS_LEGEND_BEAST;
             break;
         default:
             transitionId = B_TRANSITION_GRID_SQUARES;
+            musicId = MUS_B_TOWER;
             break;
     }
 
-    CreateBattleStartTask(transitionId, MUS_C_VS_LEGEND_BEAST);
+    CreateBattleStartTask(transitionId, musicId);
 
     IncrementGameStat(GAME_STAT_TOTAL_BATTLES);
     IncrementGameStat(GAME_STAT_WILD_BATTLES);
